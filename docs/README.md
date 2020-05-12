@@ -2,9 +2,9 @@
 [![Freetz-NG](screenshots/000-XXX_Freetz-NG_trans.png "Freetz-NG")](#)<br>
 <br>
 [News](NEWS.md)<br>
-[Firmwares](FIRMWARES.md)<br>
+[Currently supported (Firmwares)](FIRMWARES.md)<br>
 [Changelog](CHANGELOG.md)<br>
-[Readme](https://github.com/Freetz-NG/freetz-ng/blob/master/README.md)<br>
+[Downloads (Readme)](https://github.com/Freetz-NG/freetz-ng/blob/master/README.md)<br>
 
 ### Timeline
 [Github](https://github.com/Freetz-NG/freetz-ng/commits/master)<br>
