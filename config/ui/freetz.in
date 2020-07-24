@@ -146,7 +146,7 @@ menu "Web Interface"
 			bool "Freetz-NG"
 			
 		config FREETZ_TAGGING_PIMPED
-			bool "Freetz Pimped"
+			bool "Pimped"
 
 		config FREETZ_TAGGING_PRISRAK
 			bool "prisrak"
@@ -159,7 +159,7 @@ menu "Web Interface"
 		default "none"          if FREETZ_TAGGING_NONE
 		default "cuma"          if FREETZ_TAGGING_CUMA
 		default "freetz-ng"     if FREETZ_TAGGING_NG
-		default "freetz-pimped" if FREETZ_TAGGING_PIMPED
+		default "pimped"        if FREETZ_TAGGING_PIMPED
 		default "prisrak"       if FREETZ_TAGGING_PRISRAK
 
 	config FREETZ_WEBIF_LINK
