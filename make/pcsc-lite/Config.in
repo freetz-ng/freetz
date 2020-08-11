@@ -1,5 +1,5 @@
 config FREETZ_PACKAGE_PCSC_LITE
-	bool "PCSC-lite (pcscd) 1.8.24 (binary only)"
+	bool "PCSC-lite (pcscd) 1.9.0 (binary only)"
 	select FREETZ_LIB_libdl
 	select FREETZ_LIB_libpthread
 	select FREETZ_LIB_librt

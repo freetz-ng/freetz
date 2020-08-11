@@ -8,4 +8,5 @@
 +SUBDIRS =
  AM_CPPFLAGS = -I$(top_srcdir)/src/PCSC -I$(top_builddir)/src/PCSC \
  	$(SYMBOL_VISIBILITY)
- 
+ AUTO_FIX_PATCHES = y 
+ make $PKG-unpacked

@@ -1,7 +1,7 @@
-$(call PKG_INIT_BIN, 1.8.24)
+$(call PKG_INIT_BIN, 1.9.0)
 $(PKG)_LIB_VERSION:=1.0.0
 $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.bz2
-$(PKG)_SOURCE_MD5:=3113e8cdddf3dc42ea35f3cac040624f
+$(PKG)_SOURCE_MD5:= eb595f2d398ff229207a6ec09fbc4e98
 $(PKG)_SITE:=https://pcsclite.apdu.fr/files
 
 $(PKG)_BINARY:=$($(PKG)_DIR)/src/pcscd
