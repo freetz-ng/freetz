@@ -1,6 +1,6 @@
-$(call PKG_INIT_BIN, 1.4.30)
+$(call PKG_INIT_BIN, 1.4.33)
 $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.bz2
-$(PKG)_SOURCE_MD5:=817abceef715e02cb47617621fe192e0
+$(PKG)_SOURCE_MD5:=b11907894ce2d345439635e2b967e7e5
 $(PKG)_SITE:=https://ccid.apdu.fr/files
 
 $(PKG)_BINARY:=$($(PKG)_DIR)/src/.libs/libccid.so

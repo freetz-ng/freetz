@@ -1,5 +1,5 @@
 config FREETZ_PACKAGE_CCID
-	bool "CCID driver 1.4.30"
+	bool "CCID driver 1.4.33"
 	select FREETZ_LIB_libpthread
 	select FREETZ_LIB_libusb_1
 	select FREETZ_PACKAGE_PCSC_LITE
