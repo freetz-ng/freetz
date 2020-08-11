@@ -1,4 +1,4 @@
-# Tor 0.4.3.5
+# Tor 0.4.3.6
 
 Tor ist ein **anonymes Kommunikationssystem** für das Internet, mit dem
 man **verschlüsselt** und **sicher surfen** kann. Die Installation eines

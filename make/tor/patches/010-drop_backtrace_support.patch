@@ -36,3 +36,5 @@
  		  gnu/libc-version.h \
  		  grp.h \
  		  ifaddrs.h \
+ AUTO_FIX_PATCHES=y 
+ make $PKG-unpacked
