@@ -85,3 +85,5 @@ Signed-off-by: Theodore Ts'o <tytso@mit.edu>
  #include <fcntl.h>
  #include <utime.h>
  #ifdef HAVE_GETOPT_H
+ AUTO_FIX_PATCHES=y 
+ make $PKG-unpacked

@@ -13,6 +13,7 @@
  
    fi
 +fi
- 
+ AUTO_FIX_PATCHES=y 
+ make $PKG-unpacked
  
  

@@ -9,3 +9,5 @@
  #define FSCK_REBOOT      2	/* System should be rebooted */
  #define FSCK_UNCORRECTED 4	/* File system errors left uncorrected */
  #define FSCK_ERROR       8	/* Operational error */
+ AUTO_FIX_PATCHES=y 
+ make $PKG-unpacked

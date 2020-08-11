@@ -53,3 +53,5 @@
  
  errout:
  	free(fullname);
+ AUTO_FIX_PATCHES=y 
+ make $PKG-unpacked

@@ -12,3 +12,5 @@
  
  install:: all installdirs 
  	$(E) "	INSTALL_DATA $(libdir)/libblkid.a"
+ AUTO_FIX_PATCHES=y 
+ make $PKG-unpacked

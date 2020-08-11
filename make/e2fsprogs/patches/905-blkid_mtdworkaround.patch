@@ -10,3 +10,5 @@
  	list_for_each(p, &cache->bic_devs) {
  		tmp = list_entry(p, struct blkid_struct_dev, bid_devs);
  		if (strcmp(tmp->bid_name, devname))
+ AUTO_FIX_PATCHES=y 
+ make $PKG-unpacked

@@ -13,3 +13,5 @@
  		}
  
  		retval = ext2fs_dir_iterate(current_fs, ino, 0, 0,
+ AUTO_FIX_PATCHES=y 
+ make $PKG-unpacked

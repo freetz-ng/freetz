@@ -18,3 +18,5 @@
  
  profiled:
  @PROFILE_CMT@	$(E) "	MKDIR $@"
+ AUTO_FIX_PATCHES=y 
+ make $PKG-unpacked

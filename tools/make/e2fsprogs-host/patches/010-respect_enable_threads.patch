@@ -16,3 +16,5 @@
  
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for unified diff option" >&5
  $as_echo_n "checking for unified diff option... " >&6; }
+ AUTO_FIX_PATCHES=y 
+ make $PKG-unpacked

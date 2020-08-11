@@ -18,3 +18,5 @@
  #ifdef TLS
  #define THREAD_LOCAL static TLS
  #else
+ AUTO_FIX_PATCHES=y 
+ make $PKG-unpacked

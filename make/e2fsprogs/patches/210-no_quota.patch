@@ -481,3 +481,5 @@
  
  	if (U_flag) {
  		int set_csum = 0;
+ AUTO_FIX_PATCHES=y 
+ make $PKG-unpacked

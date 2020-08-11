@@ -9,3 +9,5 @@
  
  ac_libobjs=
  ac_ltlibobjs=
+ AUTO_FIX_PATCHES=y 
+ make $PKG-unpacked

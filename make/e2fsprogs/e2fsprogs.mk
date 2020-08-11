@@ -1,4 +1,4 @@
-$(call PKG_INIT_BIN, 1.42.13)
+$(call PKG_INIT_BIN, 1.45.6)
 $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.xz
 $(PKG)_SOURCE_MD5:=ce8e4821f5f53d4ebff4195038e38673
 $(PKG)_SITE:=@SF/e2fsprogs,@KERNEL/linux/kernel/people/tytso/e2fsprogs/v$($(PKG)_VERSION)

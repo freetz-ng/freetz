@@ -43,3 +43,5 @@
  			goto errout;
  		}
  		fix_perms("rdump", inode, -1, fullname);
+ AUTO_FIX_PATCHES=y 
+ make $PKG-unpacked

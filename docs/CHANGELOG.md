@@ -202,7 +202,7 @@ Latest changes
     * dnsmasq 2.80/2.82
     * dosfstools 3.0.28
     * dropbear 2020.80
-    * e2fsprogs 1.42.13
+    * e2fsprogs 1.45.6
     * espeak 1.48.04
     * expat 2.2.9
     * ffmpeg 1.2.12

@@ -9,3 +9,5 @@
  
  #define BLKID_ERR_IO	 5
  #define BLKID_ERR_PROC	 9
+ AUTO_FIX_PATCHES=y 
+ make $PKG-unpacked

@@ -38,3 +38,5 @@
  	retval = _llseek(fd, ((unsigned long long) offset) >> 32,
  			 ((unsigned long long)offset) & 0xffffffff,
  			 &result, origin);
+ AUTO_FIX_PATCHES=y 
+ make $PKG-unpacked
