@@ -1,0 +1,59 @@
+Because of incorrect backport AVM kernel sources for 7390.06.5x - 06.8x
+use deviating from vanilla sources codes for SO_PROTOCOL / SO_DOMAIN.
+
+S. https://github.com/Freetz/freetz/issues/208 for more details.
+
+--- xlat/sock_options.in
++++ xlat/sock_options.in
+@@ -284,13 +284,13 @@
+ SO_TIMESTAMPING_OLD	37
+ #endif
+ 
+-#if defined __alpha__ || defined __hppa__ || defined __mips__ || defined __sparc__
++#if defined __alpha__ || defined __hppa__ || (defined(__mips__) && !defined(_AVM_WRONG_SOCKET_OPTIONS_CODES)) || defined __sparc__
+ SO_PROTOCOL	4136
+ #else
+ SO_PROTOCOL	38
+ #endif
+ 
+-#if defined __alpha__ || defined __hppa__ || defined __mips__ || defined __sparc__
++#if defined __alpha__ || defined __hppa__ || (defined(__mips__) && !defined(_AVM_WRONG_SOCKET_OPTIONS_CODES)) || defined __sparc__
+ SO_DOMAIN	4137
+ #else
+ SO_DOMAIN	39
+--- xlat/sock_options.h
++++ xlat/sock_options.h
+@@ -885,7 +885,7 @@
+ # define SO_TIMESTAMPING_OLD 37
+ #endif
+ #endif
+-#if defined __alpha__ || defined __hppa__ || defined __mips__ || defined __sparc__
++#if defined __alpha__ || defined __hppa__ || (defined(__mips__) && !defined(_AVM_WRONG_SOCKET_OPTIONS_CODES)) || defined __sparc__
+ #if defined(SO_PROTOCOL) || (defined(HAVE_DECL_SO_PROTOCOL) && HAVE_DECL_SO_PROTOCOL)
+ DIAG_PUSH_IGNORE_TAUTOLOGICAL_COMPARE
+ static_assert((SO_PROTOCOL) == (4136), "SO_PROTOCOL != 4136");
+@@ -902,7 +902,7 @@
+ # define SO_PROTOCOL 38
+ #endif
+ #endif
+-#if defined __alpha__ || defined __hppa__ || defined __mips__ || defined __sparc__
++#if defined __alpha__ || defined __hppa__ || (defined(__mips__) && !defined(_AVM_WRONG_SOCKET_OPTIONS_CODES)) || defined __sparc__
+ #if defined(SO_DOMAIN) || (defined(HAVE_DECL_SO_DOMAIN) && HAVE_DECL_SO_DOMAIN)
+ DIAG_PUSH_IGNORE_TAUTOLOGICAL_COMPARE
+ static_assert((SO_DOMAIN) == (4137), "SO_DOMAIN != 4137");
+@@ -1890,13 +1890,13 @@
+  XLAT(SO_TIMESTAMPING_OLD),
+ #endif
+ 
+-#if defined __alpha__ || defined __hppa__ || defined __mips__ || defined __sparc__
++#if defined __alpha__ || defined __hppa__ || (defined(__mips__) && !defined(_AVM_WRONG_SOCKET_OPTIONS_CODES)) || defined __sparc__
+  XLAT(SO_PROTOCOL),
+ #else
+  XLAT(SO_PROTOCOL),
+ #endif
+ 
+-#if defined __alpha__ || defined __hppa__ || defined __mips__ || defined __sparc__
++#if defined __alpha__ || defined __hppa__ || (defined(__mips__) && !defined(_AVM_WRONG_SOCKET_OPTIONS_CODES)) || defined __sparc__
+  XLAT(SO_DOMAIN),
+ #else
+  XLAT(SO_DOMAIN),

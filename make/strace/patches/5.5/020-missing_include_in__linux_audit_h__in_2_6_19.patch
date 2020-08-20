@@ -1,0 +1,25 @@
+workaround: linux/audit.h in kernel 2.6.19 misses #include <linux/types.h>
+
+this patch could be removed as soon as the Freetz download toolchain for 2.6.19 based boxes
+contains the fixed version of linux/audit.h, s. make/linux/patches/2.6.19.2/121-linux_audit_h_missing_include.patch
+
+--- netlink.c
++++ netlink.c
+@@ -10,6 +10,7 @@
+ #include "defs.h"
+ #include "netlink.h"
+ #include "nlattr.h"
++#include <linux/types.h>
+ #include <linux/audit.h>
+ #include <linux/rtnetlink.h>
+ #include <linux/xfrm.h>
+--- printsiginfo.c
++++ printsiginfo.c
+@@ -18,6 +18,7 @@
+ #include DEF_MPERS_TYPE(siginfo_t)
+ 
+ #include <signal.h>
++#include <linux/types.h>
+ #include <linux/audit.h>
+ 
+ #include MPERS_DEFS

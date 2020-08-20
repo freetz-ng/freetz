@@ -2,10 +2,10 @@
 # recent versions of strace do not support older kernel versions anymore,
 # that's the reason we have to stick to an older strace version for kernel-2.6.13
 #
-$(call PKG_INIT_BIN, $(if $(FREETZ_KERNEL_VERSION_2_6_13),4.9,5.0))
+$(call PKG_INIT_BIN, $(if $(FREETZ_KERNEL_VERSION_2_6_13),4.9,5.5))
 $(PKG)_SOURCE:=$(pkg)-$($(PKG)_VERSION).tar.xz
 $(PKG)_SOURCE_MD5_4.9:=885eafadb10f6c60464a266d3929a2a4
-$(PKG)_SOURCE_MD5_5.0:=8499d66e5c467fd391c272dd82f0b691
+$(PKG)_SOURCE_MD5_5.5:=dbce2e84632b39a4ed86b9fc60447af9
 $(PKG)_SOURCE_MD5:=$($(PKG)_SOURCE_MD5_$($(PKG)_VERSION))
 $(PKG)_SITE:=@SF/$(pkg),https://strace.io/files/$($(PKG)_VERSION)
 

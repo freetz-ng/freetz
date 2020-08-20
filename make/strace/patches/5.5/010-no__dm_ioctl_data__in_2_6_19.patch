@@ -1,0 +1,27 @@
+--- dm.c
++++ dm.c
+@@ -464,7 +464,10 @@
+ 		ioc = alloca(sizeof(*ioc));
+ 	}
+ 
+-	if ((umoven(tcp, arg, offsetof(struct dm_ioctl, data), ioc) < 0) ||
++	if (
++#if DM_VERSION_MINOR > 10
++	(umoven(tcp, arg, offsetof(struct dm_ioctl, data), ioc) < 0) ||
++#endif
+ 	    (ioc->data_size < offsetof(struct dm_ioctl, data_size))) {
+ 		if (entering(tcp))
+ 			free(ioc);
+@@ -511,10 +514,12 @@
+ 
+ 	PRINT_FIELD_U(", ", *ioc, data_size);
+ 
++#if DM_VERSION_MINOR > 10
+ 	if (ioc->data_size < offsetof(struct dm_ioctl, data)) {
+ 		tprints_comment("data_size too small");
+ 		goto skip;
+ 	}
++#endif
+ 
+ 	if (dm_ioctl_has_params(code))
+ 		PRINT_FIELD_U(", ", *ioc, data_start);
