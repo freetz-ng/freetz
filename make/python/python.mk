@@ -107,6 +107,8 @@ $($(PKG)_DIR)/.installed: $($(PKG)_DIR)/.compiled
 		\
 		find usr/lib/python$(PYTHON_MAJOR_VERSION)/ -name "*.pyo" -delete; \
 		\
+		[ "$(FREETZ_SEPARATE_AVM_UCLIBC)" == "y" ] && $(FREETZ_BASE_DIR)/$(TOOLS_DIR)/patchelf --set-interpreter /usr/lib/freetz/ld-uClibc.so.1 usr/bin/python$(PYTHON_MAJOR_VERSION); \
+		\
 		$(TARGET_STRIP) \
 			usr/bin/python$(PYTHON_MAJOR_VERSION) \
 			$(if $(FREETZ_PACKAGE_PYTHON_STATIC),,usr/lib/libpython$(PYTHON_MAJOR_VERSION).so.1.0) \
