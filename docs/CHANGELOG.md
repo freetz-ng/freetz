@@ -289,7 +289,7 @@ Latest changes
     * smartmontools 7.1
     * sqlite 3.31.1
     * sslh 1.19c
-    * strace 4.9 (kernel-2.6.13) / 5.0 (all other kernel versions)
+    * strace 4.9 (kernel-2.6.13) / 5.5 (all other kernel versions)
     * stunnel 5.56
     * subversion 1.8.19/1.9.12
     * tinc 1.0.36/1.1pre17

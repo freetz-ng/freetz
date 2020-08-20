@@ -1,4 +1,4 @@
-# strace 4.9/5.0 (binary only)
+# strace 4.9/5.5 (binary only)
 
 **[strace](http://sourceforge.net/projects/strace/)**
 verfolgt System-Calls und Signale eines Prozesses. Dabei schaltet es

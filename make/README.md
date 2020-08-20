@@ -998,7 +998,7 @@
   * **[pciutils 3.1.7 (binary only)](../docs/make/pciutils.md)<a id='pciutils'></a>**<br>
     The PCI Utilities are a collection of programs for inspecting and manipulating configuration of PCI devices, all based on a common portable library libpci which offers access to the PCI
 
-  * **[strace 4.9/5.0 (binary only)](../docs/make/strace.md)<a id='strace'></a>**<br>
+  * **[strace 4.9/5.5 (binary only)](../docs/make/strace.md)<a id='strace'></a>**<br>
     strace - trace system calls and signals strace is a system call tracer, i.e. a debugging tool which prints out a trace of all the system calls made by a another process/program.
      - [Tip: Vermeiden von "unfinished" und "resumed" in strace-Logs](../docs/make/strace.md#tip-vermeiden-von-unfinished-und-resumed-in-strace-logs)
 
