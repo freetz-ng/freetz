@@ -3,7 +3,7 @@ config FREETZ_PACKAGE_NTFS
 	depends on !FREETZ_AVMPLUGINS_NTFS && !(FREETZ_AVM_HAS_NTFS && !FREETZ_REMOVE_NTFS) && FREETZ_REPLACE_MODULE_AVAILABLE
 	select FREETZ_LIB_libpthread
 	select FREETZ_LIB_libntfs
-	select FREETZ_MODULE_fuse
+	select FREETZ_MODULE_fuse if FREETZ_KERNEL_VERSION_4_9_MIN
 	default n
 	help
 		The NTFS-3G driver is an open source, freely available read/write NTFS

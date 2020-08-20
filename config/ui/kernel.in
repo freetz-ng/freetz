@@ -21,7 +21,8 @@ config FREETZ_REPLACE_KERNEL
 		( FREETZ_AVM_SOURCE_7270_05_21 || FREETZ_AVM_SOURCE_7270_05_51 || FREETZ_AVM_SOURCE_7270_06_05 )
 
 	select FREETZ_MODULE_fuse if ! FREETZ_REMOVE_NTFS && FREETZ_REMOVE_WEBDAV && \
-		( FREETZ_SYSTEM_TYPE_AR9 || FREETZ_SYSTEM_TYPE_IKS || FREETZ_SYSTEM_TYPE_UR8 )
+		( FREETZ_SYSTEM_TYPE_AR9 || FREETZ_SYSTEM_TYPE_IKS || FREETZ_SYSTEM_TYPE_UR8 ) && \
+		FREETZ_KERNEL_VERSION_4_9_MIN
 
 	#  do we really need to do so? could Freetz kernel be used with AVM's jffs2.ko module?
 	#  it looks like the only reason for doing so is jffs2.ko size, Freetz one is smaller.

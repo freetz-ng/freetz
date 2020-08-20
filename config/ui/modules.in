@@ -418,6 +418,7 @@ config FREETZ_MODULE_hfsplus
 
 config FREETZ_MODULE_fuse
 	bool "fuse.ko"
+	depends on FREETZ_KERNEL_VERSION_4_9_MIN
 	default n
 
 config FREETZ_MODULE_iso9660
@@ -436,9 +437,7 @@ config FREETZ_MODULE_jbd2
 
 config FREETZ_MODULE_lockd
 	bool "lockd.ko"
-	depends on \
-		FREETZ_KERNEL_VERSION_2_6_13 || \
-		FREETZ_KERNEL_VERSION_2_6_28_MIN
+	depends on FREETZ_KERNEL_VERSION_4_9_MIN
 	select FREETZ_MODULE_sunrpc
 	default n
 
@@ -453,20 +452,38 @@ config FREETZ_MODULE_minix
 config FREETZ_MODULE_nfsd
 	bool "nfsd.ko"
 	depends on FREETZ_NFS_SUPPORT_AVAILABLE_AS_MODULE
-	select FREETZ_MODULE_lockd
-	select FREETZ_MODULE_exportfs
+	select FREETZ_MODULE_lockd if FREETZ_KERNEL_VERSION_4_9_MIN
+	select FREETZ_MODULE_exportfs if FREETZ_KERNEL_VERSION_4_9_MIN
+	select FREETZ_MODULE_grace if FREETZ_KERNEL_VERSION_4_9_MIN
 	default n
 
 config FREETZ_MODULE_exportfs
 	bool "exportfs.ko"
-	depends on FREETZ_NFS_SUPPORT_AVAILABLE_AS_MODULE
+	depends on FREETZ_NFS_SUPPORT_AVAILABLE_AS_MODULE && FREETZ_KERNEL_VERSION_4_9_MIN
 	default n
+
+config FREETZ_MODULE_grace
+        bool "grace.ko"
+        depends on FREETZ_NFS_SUPPORT_AVAILABLE_AS_MODULE && FREETZ_KERNEL_VERSION_4_9_MIN
+        default n
 
 config FREETZ_MODULE_nfs
 	bool "nfs.ko"
-	depends on FREETZ_NFS_SUPPORT_AVAILABLE_AS_MODULE
+	depends on FREETZ_NFS_SUPPORT_AVAILABLE_AS_MODULE && FREETZ_KERNEL_VERSION_4_9_MIN
 	select FREETZ_MODULE_lockd
+        select FREETZ_MODULE_nfsv2
+        select FREETZ_MODULE_nfsv3
 	default n
+
+config FREETZ_MODULE_nfsv2
+        bool "nfsv2.ko"
+        depends on FREETZ_NFS_SUPPORT_AVAILABLE_AS_MODULE && FREETZ_KERNEL_VERSION_4_9_MIN
+        default n
+
+config FREETZ_MODULE_nfsv3
+        bool "nfsv3.ko"
+        depends on FREETZ_NFS_SUPPORT_AVAILABLE_AS_MODULE && FREETZ_KERNEL_VERSION_4_9_MIN
+        default n
 
 config FREETZ_MODULE_nls_cp437
 	bool "nls_cp437.ko"
@@ -662,9 +679,7 @@ config FREETZ_MODULE_sit
 
 config FREETZ_MODULE_sunrpc
 	bool "sunrpc.ko"
-	depends on \
-		FREETZ_KERNEL_VERSION_2_6_13 || \
-		FREETZ_KERNEL_VERSION_2_6_28_MIN
+	depends on FREETZ_KERNEL_VERSION_4_9_MIN
 	default n
 
 config FREETZ_MODULE_wireguard
