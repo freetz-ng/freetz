@@ -576,7 +576,7 @@
   * **<u>squashfs4-le: squashfs-tools 4.3 (AVM-LE)</u><a id='squashfs4-le'></a>**<br>
     This package provides unsquashfs/mksquashfs utilities modified to be able to expand/create images in AVM-LE format. AVM-LE is the format used by AVM to pack the filesystem of some cable boxes, e.g. 6490, 6590 (x86 core only). The only difference of this format to the original LE format is that the value of the mkfs_time superblock field is equal to the bytes_used field.
 
-  * **<u>sshfs-fuse 2.4 (binary only)</u><a id='sshfs-fuse'></a>**<br>
+  * **<u>sshfs-fuse 2.4</u><a id='sshfs-fuse'></a>**<br>
     This is a filesystem client based on the SSH File Transfer Protocol. Since most SSH servers already support this protocol it is very easy to set up: i.e. on the server side there's nothing to do. On the client side mounting the filesystem is as easy as logging into the server with ssh.
 
   * **<u>sslh 1.19c</u><a id='sslh'></a>**<br>

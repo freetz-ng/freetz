@@ -5,6 +5,8 @@ $(PKG)_SITE:=@SF/fuse
 $(PKG)_BINARY:=$($(PKG)_DIR)/sshfs
 $(PKG)_TARGET_BINARY:=$($(PKG)_DEST_DIR)/usr/bin/sshfs
 
+$(PKG)_EXCLUDED+=$(if $(FREETZ_PACKAGE_SSHFS_FUSE_REMOVE_WEBIF),usr/lib/cgi-bin/sshfs-fuse.cgi etc/default.sshfs-fuse etc/init.d/rc.sshfs-fuse)
+
 $(PKG)_DEPENDS_ON += fuse glib2
 
 $(PKG)_CONFIGURE_OPTIONS += --disable-sshnodelay

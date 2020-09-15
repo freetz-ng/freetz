@@ -1,5 +1,5 @@
 config FREETZ_PACKAGE_SSHFS_FUSE
-	bool "sshfs-fuse 2.4 (binary only)"
+	bool "sshfs-fuse 2.4"
 	select FREETZ_PACKAGE_FUSE
 	select FREETZ_PACKAGE_DROPBEAR_SERVER_ONLY if FREETZ_PACKAGE_DROPBEAR
 	select FREETZ_PACKAGE_OPENSSH
@@ -13,3 +13,10 @@ config FREETZ_PACKAGE_SSHFS_FUSE
 		i.e. on the server side there's nothing to do.
 		On the client side mounting the filesystem is as easy as
 		logging into the server with ssh.
+
+config FREETZ_PACKAGE_SSHFS_FUSE_REMOVE_WEBIF
+	bool "remove webinterface"
+	depends on FREETZ_PACKAGE_SSHFS_FUSE
+	default n
+	help
+		This option removes the webinterface
