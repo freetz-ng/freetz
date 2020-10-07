@@ -1,5 +1,13 @@
 @import url(../common.css);
 
+div {
+	cursor: url(/images/prisrak/mauszeiger_turqoise.cur), auto;
+	}
+	  
+a:hover {
+	cursor: url(/images/prisrak/mauszeiger_gelb.cur), default;
+	}
+
 a {
 	text-decoration: none;
 }
@@ -7,7 +15,7 @@ a:link, a:visited {
 	color: #303030;
 }
 a:hover {
-	color: #505050; font-weight:bold;
+	color: #505050;
 	text-decoration: underline;
 }
 body {
@@ -44,7 +52,7 @@ h2 {
 }
 pre {
 	font-size: 14px;
-	border: 2px dotted #bbbbbb;
+	border: 2px dotted #D3095A; 
 	padding: 10px;
 }
 pre.plain {
@@ -67,14 +75,6 @@ small {
 input {
 	padding: 2px;
 }
-form.btn {
-	margin: 0px;
-}
-div.btn {
-	float: left;
-	margin-top: 10px;
-	padding-right: 3px;
-}
 div.section {
 	clear: left;
 }
@@ -83,7 +83,7 @@ div.section {
 	width: 190px;
 	background-color: #ffffff;
 	float: right;
-	border: 2px dotted #bbbbbb;
+	border: 2px dotted #3D85C6; 
 	margin: 10px 0px 10px 20px;
 	padding: 2px;
 	padding-top: 0px;
@@ -211,10 +211,19 @@ div.su a {
 	width: 100%;
 }
 
+form.btn {
+	margin: 0px;
+}
+div.btn {
+	float: left;
+	margin-top: 10px;
+	padding-right: 3px;
+}
 
 .btn-colored_enabled {
-	color:#000000;
+	color:#FFFF00;
 }
+
 .btn-colored_disabled {
 	color:#777777;
 }
@@ -223,18 +232,22 @@ div.su a {
 .menu .active {
 	background-color: #000000;
 }
+
 body, .menu, textarea, input, select {
-	background-color: #241616;
-}
+		background-image: linear-gradient(45deg, #7A0808 0%, #241616 50%) 
+	}
 
-body, .menu, textarea, input, select,   a, body, div, td ,h1, h2, legend,   .menu a:link, .menu a:visited, .menu a:hover {
+body, .menu, textarea, input, select,   a, body, div, td ,h1, h2, legend,   .menu a:link, .menu a:visited, .menu a:hover 
+	{
 	color: #0bc69b;
-}
-a:link     { color:#3333FF; }
-a:visited  { color:#CC9900; text-decoration:none;}
-a:hover    { color:#FF3300; font-weight:bold; text-decoration:underline;}
-a:active   { color:#14b60b; }
-
+	}
+	a:link     { color:#3333FF; }
+	a:visited  { color:#CC9900; text-decoration:none;}
+	a:hover    { color:#FF3300; font-weight:bold; text-decoration:underline; 
+	a:active   { color:#14b60b; 
+	margin-left: 20px;
+	}
+	
 .daemons tr.stopped .status {
 	color: #BF0000;
 }
