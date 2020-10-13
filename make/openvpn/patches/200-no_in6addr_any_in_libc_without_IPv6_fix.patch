@@ -1,17 +1,6 @@
---- src/openvpn/pool.c
-+++ src/openvpn/pool.c
-@@ -349,7 +349,7 @@
- static struct in6_addr
- ifconfig_pool_handle_to_ipv6_base(const struct ifconfig_pool *pool, ifconfig_pool_handle hand)
- {
--    struct in6_addr ret = in6addr_any;
-+    struct in6_addr ret = IN6ADDR_ANY_INIT;
- 
-     /* IPv6 pools are always INDIV (--linear) */
-     if (hand >= 0 && hand < pool->size_ipv6)
---- src/openvpn/socket.c
+--- src/openvpn/socket.c	
 +++ src/openvpn/socket.c
-@@ -2972,10 +2972,11 @@
+@@ -3009,10 +3009,11 @@
  const char *
  print_in6_addr(struct in6_addr a6, unsigned int flags, struct gc_arena *gc)
  {

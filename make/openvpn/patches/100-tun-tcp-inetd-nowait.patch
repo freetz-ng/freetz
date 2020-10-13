@@ -1,6 +1,6 @@
---- src/openvpn/mtcp.c
-+++ src/openvpn/mtcp.c
-@@ -625,11 +625,27 @@
+--- src/openvpn/mtcp.c	
++++ src/openvpn/mtcp.c	
+@@ -640,11 +640,27 @@
               */
              if (touched && IS_SIG(&touched->context))
              {
@@ -27,10 +27,10 @@
 +                }
              }
          }
- 
---- src/openvpn/options.c
-+++ src/openvpn/options.c
-@@ -2033,10 +2033,12 @@
+
+--- src/openvpn/options.c	
++++ src/openvpn/options.c	
+@@ -2044,11 +2044,12 @@
          msg(M_USAGE, "--inetd nowait can only be used in TLS mode");
      }
  
@@ -39,11 +39,12 @@
      {
          msg(M_USAGE, "--inetd nowait only makes sense in --dev tap mode");
      }
+-
 +#endif
- 
- 
-     if (options->lladdr && dev != DEV_TYPE_TAP)
-@@ -2275,10 +2277,12 @@
+     if (options->inetd)
+     {
+         msg(M_WARN, "DEPRECATED OPTION: --inetd mode is deprecated "
+@@ -2304,10 +2305,13 @@
          {
              msg(M_USAGE, "--shaper cannot be used with --mode server");
          }
@@ -53,10 +54,11 @@
              msg(M_USAGE, "--inetd cannot be used with --mode server");
          }
 +#endif
++
          if (options->ipchange)
          {
              msg(M_USAGE, "--ipchange cannot be used with --mode server (use --client-connect instead)");
-@@ -2894,10 +2898,12 @@
+@@ -2966,10 +2970,12 @@
       * In forking TCP server mode, you don't need to ifconfig
       * the tap device (the assumption is that it will be bridged).
       */
@@ -68,10 +70,11 @@
 +#endif
  
  #ifdef _WIN32
-     if ((dev == DEV_TYPE_TUN || dev == DEV_TYPE_TAP) && !options->route_delay_defined)
+     /* when using wintun, kernel doesn't send DHCP requests, so don't use it */
+
 --- src/openvpn/socket.c
 +++ src/openvpn/socket.c
-@@ -1900,7 +1900,9 @@
+@@ -1935,7 +1935,9 @@
      {
          ASSERT(accept_from);
          ASSERT(sock->info.proto == PROTO_TCP_SERVER);
