@@ -589,6 +589,9 @@
   * **[owfs 2.7p32 (binary only)](../docs/make/owfs.md)<a id='owfs'></a>**<br>
     OWFS - 1-Wire Filesystem This package includes: - owserver for easy, world wide access to serial and USB 1-wire bus masters and attached devices - httpd and ftpd to control owserver over http or ftp - shellprograms like owdir, owwrite, owread, owpresent to control owserver via shell scripts
 
+  * **<u>p7zip 16.02 (binary only)</u><a id='p7zip'></a>**<br>
+    7-Zip  is  a  file  archiver  with the highest compression ratio. The program supports 7z (that implements LZMA compression algorithm), ZIP, CAB, ARJ, GZIP, BZIP2, TAR, CPIO, RPM and DEB formats. Compression ratio in the new 7z format is 30-50% better  than ratio in ZIP format.
+
   * **<u>PCSC-lite (pcscd) 1.9.0 (binary only)</u><a id='pcsc-lite'></a>**<br>
     The purpose of PCSC Lite is to provide a Windows(R) SCard interface in a very small form factor for communicating to smart cards and readers.
 

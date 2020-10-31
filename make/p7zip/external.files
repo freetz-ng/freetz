@@ -1,0 +1,2 @@
+[ "$EXTERNAL_FREETZ_PACKAGE_P7ZIP" == "y" ] && EXTERNAL_FILES+=" /usr/bin/7z"
+[ "$EXTERNAL_FREETZ_PACKAGE_P7ZIP" == "y" ] && EXTERNAL_FILES+=" /usr/lib/p7zip"
