@@ -1,0 +1,43 @@
+config EXTERNAL_FREETZ_PACKAGE_DIFFUTILS
+	depends on EXTERNAL_ENABLED && FREETZ_PACKAGE_DIFFUTILS
+	bool "diffutils"
+	default n
+	help
+		externals diffutils tools
+
+menu "diffutils"
+	depends on EXTERNAL_FREETZ_PACKAGE_DIFFUTILS
+
+config EXTERNAL_FREETZ_PACKAGE_DIFFUTILS_DIFF
+	bool "diff"
+	depends on FREETZ_PACKAGE_DIFFUTILS_DIFF
+	default n
+	help
+		externals the following file(s):
+		 /usr/bin/diff
+
+config EXTERNAL_FREETZ_PACKAGE_DIFFUTILS_DIFF3
+	bool "diff3"
+	depends on FREETZ_PACKAGE_DIFFUTILS_DIFF3
+	default n
+	help
+	externals the following file(s):
+		 /usr/bin/diff3
+
+config EXTERNAL_FREETZ_PACKAGE_DIFFUTILS_SDIFF
+	bool "sdiff"
+	depends on FREETZ_PACKAGE_DIFFUTILS_SDIFF
+	default n
+	help
+		externals the following file(s):
+		 /usr/bin/sdiff
+
+config EXTERNAL_FREETZ_PACKAGE_DIFFUTILS_CMP
+	bool "cmp"
+	depends on FREETZ_PACKAGE_DIFFUTILS_CMP
+	default n
+	help
+		externals the following file(s):
+		 /usr/bin/cmp
+
+endmenu

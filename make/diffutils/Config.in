@@ -1,0 +1,35 @@
+config FREETZ_PACKAGE_DIFFUTILS
+	bool "diffutils 3.7 (binary only)"
+	default n
+	select FREETZ_PACKAGE_DIFFUTILS_DIFF
+	help
+		GNU Diffutils is a package of several programs related to finding differences between files.
+		Provides the following tools from diffutils-package: diff, diff3, sdiff, cmp
+
+config FREETZ_PACKAGE_DIFFUTILS_DIFF
+	bool "Include diff"
+	depends on FREETZ_PACKAGE_DIFFUTILS
+	default y
+	help
+		Include diff in the image
+
+config FREETZ_PACKAGE_DIFFUTILS_DIFF3
+	bool "Include diff3"
+	depends on FREETZ_PACKAGE_DIFFUTILS
+	default n
+	help
+		Include diff3 in the image
+
+config FREETZ_PACKAGE_DIFFUTILS_SDIFF
+	bool "Include sdiff"
+	depends on FREETZ_PACKAGE_DIFFUTILS
+	default n
+	help
+		Include sdiff in the image
+
+config FREETZ_PACKAGE_DIFFUTILS_CMP
+	bool "Include cmp"
+	depends on FREETZ_PACKAGE_DIFFUTILS
+	default n
+	help
+		Include cmp in the image

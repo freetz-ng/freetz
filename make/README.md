@@ -173,6 +173,9 @@
      - [Zertifikat erstellen](../docs/make/dehydrated.md#zertifikat-erstellen)
      - [Zertifikat benutzen](../docs/make/dehydrated.md#zertifikat-benutzen)
 
+  * **<u>diffutils 3.7 (binary only)</u><a id='diffutils'></a>**<br>
+    GNU Diffutils is a package of several programs related to finding differences between files. Provides the following tools from diffutils-package: diff, diff3, sdiff, cmp
+
   * **[DigiTemp 3.7.2 (binary only)](../docs/make/digitemp.md)<a id='digitemp'></a>**<br>
     digitemp for 1-wire modules You could use RRDstats for data collection and visualisation
      - [**Was ist digitemp?**](../docs/make/digitemp.md#was-ist-digitemp)

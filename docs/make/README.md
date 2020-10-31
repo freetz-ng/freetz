@@ -127,6 +127,9 @@
   * **[dehydrated 0.6.5 (letsencrypt)](dehydrated.md)<a id='dehydrated'></a>**<br>
     Dehydrated is a client for signing certificates with an ACME-server (e.g. Let's Encrypt) implemented as a relatively simple (zsh-compatible) bash-script. This client supports both ACME v1 and the new ACME v2 including support for wildcard certificates!
 
+  * **<u>diffutils 3.7 (binary only)</u><a id='diffutils'></a>**<br>
+    GNU Diffutils is a package of several programs related to finding differences between files. Provides the following tools from diffutils-package: diff, diff3, sdiff, cmp
+
   * **[DigiTemp 3.7.2 (binary only)](digitemp.md)<a id='digitemp'></a>**<br>
     digitemp for 1-wire modules You could use RRDstats for data collection and visualisation
 
