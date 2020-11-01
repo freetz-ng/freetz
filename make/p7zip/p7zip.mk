@@ -18,7 +18,10 @@ $(PKG_CONFIGURED_NOP)
 
 $($(PKG)_BINARY) $($(PKG)_LIB_DIR) $($(PKG)_CODECS_DIR): $($(PKG)_DIR)/.configured
 	$(SUBMAKE) -C $(P7ZIP_DIR) DEST_HOME="$(abspath $($(PKG)_DEST_DIR))" \
-	CC="$(TARGET_CC)" CXX="$(TARGET_CXX)" \
+	CC="$(TARGET_CC)" \
+	CXX="$(TARGET_CXX)" \
+	CC_SHARED="$(FPIC) -DPIC" \
+	LINK_SHARED="$(FPIC) -DPIC -shared" \
 	7z
 
 $($(PKG)_TARGET_BINARY): $($(PKG)_BINARY)
