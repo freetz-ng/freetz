@@ -1,29 +1,20 @@
---- makefile.machine.org	2016-07-14 11:29:31.000000000 +0200
-+++ makefile.machine	2020-10-17 07:55:18.948289861 +0200
-@@ -1,6 +1,8 @@
+--- makefile.machine
++++ makefile.machine
+@@ -1,5 +1,5 @@
  #
 -# makefile for Linux (x86, PPC, alpha ...)
-+# makefile for Linux (CROSS MIPSEL)
++# makefile for Linux (CROSS)
  #
-+#
-+
  
  OPTFLAGS=-O -s
+@@ -12,8 +12,8 @@
  
-@@ -10,10 +12,12 @@
- 	-D_7ZIP_LARGE_PAGES \
- 	$(LOCAL_FLAGS)
- 
--CXX=g++
--CC=gcc
+ CXX=g++
+ CC=gcc
 -CC_SHARED=-fPIC
 -LINK_SHARED=-fPIC -shared
-+CXX=mips-linux-g++
-+CC=mips-linux-gcc
 +CC_SHARED=-fPIC -DPIC
 +LINK_SHARED=-fPIC -DPIC -shared
-+
-+TOOLS=qemu-mipsel  /usr/mipsel-linux-gnu/lib/ld.so.1  --library-path /usr/mipsel-linux-gnu/lib
  
  LOCAL_LIBS=-lpthread
  LOCAL_LIBS_DLL=$(LOCAL_LIBS) -ldl
