@@ -947,6 +947,17 @@ choice
 			Enable this to compile a mod image for FritzFON 7150 based
 			on a 7170 image.
 
+	config FREETZ_TYPE_3270_V3_7270_V3
+                bool "3270 v3"
+                depends on FREETZ_TYPE_7270_V3
+                select FREETZ_REMOVE_DECT
+                select FREETZ_REMOVE_VOIPD
+                select FREETZ_REMOVE_TELEPHONY
+                select FREETZ_REMOVE_CAPIOVERTCP
+                help
+                        Enable this to compile an alien image for FritzBox WLAN 3270 v3 based
+                        on a 7270 v3 image.
+
 	config FREETZ_TYPE_7240_7270
 		bool "7240"
 		depends on FREETZ_TYPE_7270_V3

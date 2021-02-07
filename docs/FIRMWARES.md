@@ -52,6 +52,7 @@ Currently supported devices and firmwares
   - 96.05.54 rev27373 {GER}
   - 96.05.52 rev27362 {INT}
   - 125.05.52 rev27361 {ITA}
+  - Alien 7270 v3
 * __Fritz!Box Fon WLAN 3272__
   - 126.06.30 rev30889 {GER}
   - 126.06.50 rev33089 {GER}
