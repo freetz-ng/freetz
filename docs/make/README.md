@@ -248,7 +248,7 @@ Index:
 
 ### H
 
-  * **<u>HAProxy 1.8.28</u><a id='haproxy'></a>**<br>
+  * **<u>HAProxy 2.2.9</u><a id='haproxy'></a>**<br>
     haproxy is a loadbalancer.
 
   * **[haserl 0.9.35 (binary only)](haserl.md)<a id='haserl'></a>**<br>
