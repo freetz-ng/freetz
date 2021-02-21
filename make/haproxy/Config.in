@@ -21,7 +21,6 @@ config FREETZ_PACKAGE_HAPROXY_WITH_PCRE
 	bool "with regex support (PCRE)"
 	depends on FREETZ_PACKAGE_HAPROXY
 	select FREETZ_LIB_libpcre
-	select FREETZ_LIB_libpcreposix
 	default n
 	help
 		This option enables use of libpcre for regex.
