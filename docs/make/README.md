@@ -659,7 +659,7 @@ Index:
   * **[Streamripper 1.64.6](streamripper.md)<a id='streamripper'></a>**<br>
     Streamripper records mp3 and ogg streams. For shoutcast style streams it finds the "meta data" or track separation data, and uses that as a marker for where the track should be separated.
 
-  * **[Stunnel 5.57](stunnel.md)<a id='stunnel'></a>**<br>
+  * **[Stunnel 5.58](stunnel.md)<a id='stunnel'></a>**<br>
     Stunnel universal SSL proxy
 
   * **[Subversion 1.8.19/1.9.12](subversion.md)<a id='subversion'></a>**<br>

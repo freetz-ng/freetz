@@ -1,4 +1,4 @@
-# Stunnel 5.57
+# Stunnel 5.58
 
 [![Stunnel Webinterface](../screenshots/202_md.png)](../screenshots/202.png)
 
