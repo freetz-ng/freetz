@@ -49,6 +49,7 @@ Latest changes
    * precompiled host-tools updated to x86_64 (only)
 
  - Updated packages and libs:
+   * stunnel 5.58
    * libgd 2.3.2
 
  - Web interface:
