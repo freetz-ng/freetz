@@ -103,11 +103,11 @@ Index:
   * **<u>Remove dect_update</u><a id='remove-dect-update'></a>**<br>
     Remove /usr/bin/dect_update. This utility is only needed to update the dect firmware. This will save about 32kB uncompressed size.
 
-  * **<u>Remove dsl_control</u><a id='remove-dsl-control'></a>**<br>
-    Removes /usr/sbin/dsl_control. This saves about 540-669 KB of uncompressed data size. Select this only if you don't use the the DSL modem. See https://web.archive.org/20200701000000/wehavemorefun.de/fritzbox/Dsl_control
-
   * **[Remove dsld](REMOVE_DSLD.md)<a id='remove-dsld'></a>**<br>
     Remove DSL daemon (dsld), if you are planning to use your box as a simple IP client ("Internet mitbenuten") without routing. ATA ("via Lan1") and DSL mode will not work anymore. ATTENTION: You won't be able to use your box as a modem nor a router anymore. As well do *not* use this option if your ATA mode box uses PPoE passthrough, because in this case dsld is still needed! Furthermore, selecting this patch also selects the UPnP patch, because UPnP must be deactivated anyway for IP clients, otherwise dsld will be used again. You can find the UPnP settings in the German web UI under Einstellungen System Netzwerkeinstellungen Statusinformationen ueber UPnP uebertragen (empfohlen) Thirdly, the usermand patch will also be selected if you activate this option, because kernel module userman.ko always depends on kdsldmod.ko which is stripped by this patch.
+
+  * **<u>Remove dsl_control</u><a id='remove-dsl-control'></a>**<br>
+    Removes /usr/sbin/dsl_control. This saves about 540-669 KB of uncompressed data size. Select this only if you don't use the the DSL modem. See https://web.archive.org/20200701000000/wehavemorefun.de/fritzbox/Dsl_control
 
   * **<u>Remove dtrace</u><a id='remove-dtrace'></a>**<br>
     Remove /usr/bin/dtrace. This utility is only needed to trace ISDN D-channel. This will save about 87kB uncompressed size.
@@ -424,6 +424,9 @@ Index:
   * **<u>ENFORCE_FIRMWARE_VERSION_VIA_RCCONF: Enforce firmware_version via rc.conf</u><a id='enforce-firmware-version-via-rcconf'></a>**<br>
     This option enforces branding by hardcoding it in /etc/init.d/rc.conf This method is useful on some recently produced boxes (since 2017), which do not allow to change the value of the urlader variable 'firmware_version' in a non-volatile way. Affected boxes (known so far): all boxes with the following bootloaderVersion - 1.3179 - 1.3229 use "cat /proc/sys/urlader/environment | grep bootloaderVersion" or EVA to check the value Choose the value wisely. Your image must support it.
 
+  * **[ENFORCE_URLADER_SETTINGS: Enforce urlader environment](ENFORCE_URLADER_SETTINGS.md)<a id='enforce-urlader-settings'></a>**<br>
+    Enforce some urlader (Adam2/EVA) environment variables. * useful for tcom boxes having non-AVM standard settings in bootloader (my_ipaddress, firmware_version, ProductID) * useful for people that do clear mtd3/mtd4 often. This settings are enforced at the beginnig of the boot process.
+
   * **<u>ENFORCE_URLADER_SETTING_FIRMWARE_VERSION: Enforce firmware_version variable</u><a id='enforce-urlader-setting-firmware-version'></a>**<br>
     Choose wisely. Your image beeing built must support this. Typical settings are eg.: avm, avme, tcom, 1und1, ... If this is empty the urlader setting won't be touched.
 
@@ -432,9 +435,6 @@ Index:
 
   * **<u>ENFORCE_URLADER_SETTING_PRODUCTID: Enforce ProductID variable</u><a id='enforce-urlader-setting-productid'></a>**<br>
     Choose wisely. Your image beeing built must support this. Typical settings are eg.: Fritz_Box_DECT_7270, Fritz_Box_DECT_W920V If this is empty the urlader setting won't be touched.
-
-  * **[ENFORCE_URLADER_SETTINGS: Enforce urlader environment](ENFORCE_URLADER_SETTINGS.md)<a id='enforce-urlader-settings'></a>**<br>
-    Enforce some urlader (Adam2/EVA) environment variables. * useful for tcom boxes having non-AVM standard settings in bootloader (my_ipaddress, firmware_version, ProductID) * useful for people that do clear mtd3/mtd4 often. This settings are enforced at the beginnig of the boot process.
 
   * **<u>Keep AVM uClibc - FOR TESTING PURPOSES ONLY</u><a id='keep-avm-uclibc'></a>**<br>
 

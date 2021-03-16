@@ -377,6 +377,9 @@ Index:
   * **[microperl 5.10.1 (binary only)](microperl.md)<a id='microperl'></a>**<br>
     Perl without operating-specific functions such as readdir.
 
+  * **<u>mini-snmpd 1.2b (binary only)</u><a id='mini-snmpd'></a>**<br>
+    This program is an SNMP server for "embedded systems". The advantage in comparison to other products is the low usage of system resources.
+
   * **<u>minicom 2.5 (binary only)</u><a id='minicom'></a>**<br>
     Minicom is a menu driven communications program. It emulates ANSI and VT102 terminals. It has a dialing directory and auto zmodem download. NOTE: Minicom will expect its configurations in "/var/tmp/flash/minicom/" which has to be created before the first run of the binary by "mkdir -p  /var/tmp/flash/minicom/". To save this and after any change of minicom's configurations you will have to write it to flash with "modsave".
 
@@ -385,9 +388,6 @@ Index:
 
   * **[minisatip 1.0.4 (binary only)](minisatip.md)<a id='minisatip'></a>**<br>
     Minisatip is a multi-threaded satip server version 1.2 that runs under Linux and it was tested with DVB-S, DVB-S2, DVB-T, DVB-T2, DVB-C, DVB-C2, ATSC and ISDB-T cards.
-
-  * **<u>mini-snmpd 1.2b (binary only)</u><a id='mini-snmpd'></a>**<br>
-    This program is an SNMP server for "embedded systems". The advantage in comparison to other products is the low usage of system resources.
 
   * **[mod: Freetz(-MOD)](mod.md)<a id='mod'></a>**<br>
     This package is mandatory
@@ -427,11 +427,11 @@ Index:
   * **[netsnmp: Net-SNMP 5.8](netsnmp.md)<a id='netsnmp'></a>**<br>
     SNMP (Simple Network Management Protocol) daemon. SNMP is a widely used protocol for monitoring the health and welfare of network equipment (eg. routers), computer equipment and even devices like UPSs. Net-SNMP is a suite of applications used to implement SNMP v1, SNMP v2c and SNMP v3.
 
-  * **<u>nfsroot: NFS-root 0.1</u><a id='nfsroot'></a>**<br>
-    Mount a remote filesystem (fs) from an NFS server and use it as a root fs which is fully writable and basically unlimited in size. The Linux kernel will still be loaded from your box and during the first phase of the init process the SquashFS on the box is still used, but after the NFS-root is mounted, we pivot_root into it and it becomes the new root fs. The read-only fs on the box can still be accessed under /oldroot, but is absolutely not necessary anymore after pivot_root. Having said that, it should be clear that the remote folder to be mounted should contain everything necessary to run the box. Usually you just create a full copy of a target fs (e.g. from build/modified/filesystem or from an unpacked firmware image) and start modifying it as needed. The binaries (kernel modules, executables, shared libraries) used therein just have to fit the kernel installed on the box. Note: The mini_fo overlay filesystem will not be used if an NFS-root was mounted first (see mini_fo package). Still, both packages can be installed at the same time, because mini_fo is still useful if NFS-root is decativated. Note: This package needs "replace kernel" because a kernel patch is necessary to make the 'nfsroot' bootloader environment variable usable for our purpose. So, if if "replace kernel" is inactive, you will not see this package in
-
   * **[nfs-utils 1.3.4 (binary only)](nfs-utils.md)<a id='nfs-utils'></a>**<br>
     Linux NFS utility package Select nfsd-cgi if you want a configuration web interface. If this does not work, enable replace-kernel!
+
+  * **<u>nfsroot: NFS-root 0.1</u><a id='nfsroot'></a>**<br>
+    Mount a remote filesystem (fs) from an NFS server and use it as a root fs which is fully writable and basically unlimited in size. The Linux kernel will still be loaded from your box and during the first phase of the init process the SquashFS on the box is still used, but after the NFS-root is mounted, we pivot_root into it and it becomes the new root fs. The read-only fs on the box can still be accessed under /oldroot, but is absolutely not necessary anymore after pivot_root. Having said that, it should be clear that the remote folder to be mounted should contain everything necessary to run the box. Usually you just create a full copy of a target fs (e.g. from build/modified/filesystem or from an unpacked firmware image) and start modifying it as needed. The binaries (kernel modules, executables, shared libraries) used therein just have to fit the kernel installed on the box. Note: The mini_fo overlay filesystem will not be used if an NFS-root was mounted first (see mini_fo package). Still, both packages can be installed at the same time, because mini_fo is still useful if NFS-root is decativated. Note: This package needs "replace kernel" because a kernel patch is necessary to make the 'nfsroot' bootloader environment variable usable for our purpose. So, if if "replace kernel" is inactive, you will not see this package in
 
   * **<u>ngircd 22</u><a id='ngircd'></a>**<br>
     ngIRCd is an Open Source server for the Internet Relay Chat (IRC), which is developed and published under the terms of the GNU General Public Licence (URL: http://www.gnu.org/licenses/gpl.html). ngIRCd means "next generation IRC daemon", it's written from scratch and not deduced from the "grandfather of IRC daemons", the daemon of the IRCNet. For documentation see: http://ngircd.barton.de/documentation.php.de
@@ -682,14 +682,14 @@ Index:
 
 ### T
 
+  * **[tcp_wrappers 7.6 (binary only)](tcp_wrappers.md)<a id='tcp-wrappers'></a>**<br>
+    TCP Wrapper is a host-based Networking ACL system, used to filter network access to Internet Protocol servers on (Unix-like) operating systems such as Linux or BSD. It allows host or subnetwork IP addresses, names and/or ident query replies, to be used as tokens on which to filter for access control purposes.
+
   * **[Tcpdump 4.1.1 (binary only)](tcpdump.md)<a id='tcpdump'></a>**<br>
     Network monitoring and data acquisition tool
 
   * **<u>tcpproxy 2.0.0-beta15 (binary only)</u><a id='tcpproxy'></a>**<br>
     tcpproxy is a proxy (or tunnel or redirector) for TCP/IP protocols. In standalone mode it waits for incoming connections forwarding them to another machine or starting a local server program.
-
-  * **[tcp_wrappers 7.6 (binary only)](tcp_wrappers.md)<a id='tcp-wrappers'></a>**<br>
-    TCP Wrapper is a host-based Networking ACL system, used to filter network access to Internet Protocol servers on (Unix-like) operating systems such as Linux or BSD. It allows host or subnetwork IP addresses, names and/or ident query replies, to be used as tokens on which to filter for access control purposes.
 
   * **<u>Tesseract OCR 3.02.02 (binary only)</u><a id='tesseract'></a>**<br>
     Tesseract is an Open Source OCR engine Note: Tesseract including languages files is a huge package and requires a lot of RAM at run-time. It is NOT recommended to use it on boxes having less than 64MB RAM.
@@ -839,11 +839,11 @@ Index:
   * **<u>gptfdisk 1.0.1</u><a id='gptfdisk'></a>**<br>
     Interactive GUID partition table (GPT) manipulator
 
-  * **[HPLIP 3.14.6 (binary only)](hplip.md)<a id='hplip'></a>**<br>
-    HPLIP - HP Linux Imaging and Printing
-
   * **[hp-utils 0.3.2](hp-utils.md)<a id='hp-utils'></a>**<br>
     hp-utils is a collection of utility programs for HP printers. It's meant to be used on systems, which are unable to run the corresponding programs provided by HPLIP, e.g. because they only have limited memory and/or cpu power. hp-utils is primarily focused towards embedded systems, particularly towards the FRITZ!Box, a family of DSL routers produced by AVM.
+
+  * **[HPLIP 3.14.6 (binary only)](hplip.md)<a id='hplip'></a>**<br>
+    HPLIP - HP Linux Imaging and Printing
 
   * **[Iptables 1.4.11.1/1.4.21/1.6.2 (binary only)](iptables.md)<a id='iptables'></a>**<br>
     Netfilter/iptables Netfilter is the set of hooks within the Linux kernel for intercepting and manipulating network packets. The best-known component on top of netfilter is the firewall which filters packets, but the hooks are also used by a component which performs network address translation, and by another which provides ipchains backwards compatibility. These components are usually Loadable Kernel Modules. iptables is the name of the user space tool by which administrators create rules for the packet filtering and NAT modules. While technically iptables is merely the tool which controls the packet filtering and NAT components within the kernel, the name iptables is often used to refer to the entire infrastructure, including netfilter, connection tracking and NAT, as well as the tool itself. iptables is a standard part of all modern Linux distributions.
