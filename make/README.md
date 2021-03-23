@@ -335,7 +335,7 @@ Index:
 
 ### H
 
-  * **[HAProxy 2.2.10](../docs/make/haproxy.md)<a id='haproxy'></a>**<br>
+  * **[HAProxy 2.2.11](../docs/make/haproxy.md)<a id='haproxy'></a>**<br>
     HAProxy is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications.
 
   * **[haserl 0.9.35 (binary only)](../docs/make/haserl.md)<a id='haserl'></a>**<br>
