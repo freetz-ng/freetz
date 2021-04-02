@@ -50,6 +50,7 @@ Latest changes
    * precompiled host-tools updated to x86_64 (only)
 
  - Updated packages and libs:
+   * curl 7.76.0
    * expat 2.3.0
    * haproxy 2.2.11
    * libgd 2.3.2

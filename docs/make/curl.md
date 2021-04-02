@@ -1,4 +1,4 @@
-# Curl 7.75.0 (binary only)
+# Curl 7.76.0 (binary only)
 
 **[cURL](http://curl.haxx.se/)** ist ein Programm,
 um einzelne Dateien aus dem Internet zu transferieren - wobei nicht mit

@@ -1,6 +1,6 @@
 --- configure
 +++ configure
-@@ -23192,7 +23192,9 @@
+@@ -23289,7 +23289,9 @@
     LD_LIBRARY_PATH=$CURL_LIBRARY_PATH:$old
     export LD_LIBRARY_PATH
     if test "$cross_compiling" = yes; then :
