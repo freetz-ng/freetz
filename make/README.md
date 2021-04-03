@@ -944,7 +944,7 @@ Index:
   * **<u>tmux 2.5 (binary only)</u><a id='tmux'></a>**<br>
     tmux, a BSD-licensed alternative to GNU screen. Uses ncurses.
 
-  * **[Tor 0.4.4.6](../docs/make/tor.md)<a id='tor'></a>**<br>
+  * **[Tor 0.4.5.7](../docs/make/tor.md)<a id='tor'></a>**<br>
     The Onion Router Anonymous Internet communication system.
      - [Tor als Proxy benutzen](../docs/make/tor.md#tor-als-proxy-benutzen)
      - [Tor und Privoxy](../docs/make/tor.md#tor-und-privoxy)

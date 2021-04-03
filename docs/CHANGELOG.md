@@ -59,6 +59,7 @@ Latest changes
    * OpenSSH 8.5p1
    * OpenSSL 0.9.8zh/1.0.2u/1.1.1k/3.0.0-alpha13
    * stunnel 5.58
+   * Tor 0.4.5.7
 
  - Web interface:
    * Settings backup:
