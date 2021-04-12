@@ -1,0 +1,11 @@
+
+pkg_pre_save() { 
+    modunreg file dnsmasq dhcphosts
+}
+
+pkg_post() {
+    [ -f /var/mod/etc/conf/dnsmasq.cfg ] && . /var/mod/etc/conf/dnsmasq.cfg
+    if [ "$DNSMASQ_DHCPHOSTFILE" == "yes" ]; then
+        modreg file dnsmasq dhcphosts 'DHCP-hosts' 0 dnsmasq_dhcphosts
+    fi
+}

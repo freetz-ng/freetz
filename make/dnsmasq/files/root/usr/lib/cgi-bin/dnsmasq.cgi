@@ -15,6 +15,7 @@ check "$DNSMASQ_WRAPPER" yes:wrapper
 check "$DNSMASQ_MULTID_RESTART" yes:multid_restart
 check "$DNSMASQ_LOG_QUERIES" yes:log_queries
 check "$DNSMASQ_DNSSEC" yes:dnssec
+check "$DNSMASQ_DHCPHOSTFILE" yes:dhcphostfile
 
 sec_begin "$(lang de:"Starttyp" en:"Start type")"
 cgi_print_radiogroup_service_starttype "enabled" "$DNSMASQ_ENABLED" "" "" 0
@@ -110,8 +111,13 @@ cat << EOF
 <span style="font-size:10px;">($(lang de:"nur Eintr&auml;ge, die eine g&uuml;ltige IP und MAC aufweisen" en:"items with valid IP and MAC addresses only"))</span>
 </p>
 <p>
+<input type="hidden" name="dhcphostfile" value="no">
+<input id="dhcphostfile1" type="checkbox" name="dhcphostfile" value="yes"$dhcphostfile_chk><label for="dhcphostfile1"> $(lang de:"Lese DHCP host Informationen aus einer Datei." en:"Read DHCP host information from the specified file.")</label><br>
+<span style="font-size:10px;">($(lang de:"Bitte nach dem Aktivieren Webseite <a href=''>neuladen.</a>" en:"Please <a href=''>reload</a> webpage after activation."))</span>
+</p>
+<p>
 <input type="hidden" name="wpadfix" value="no">
-<input id="wpad1" type="checkbox" name="wpadfix" value="ves"$wpadfix_chk><label for="wpad1"> $(lang de:"Ignoriere DHCP-Clients die sich als <i>wpad</i> ausgeben" en:"Ignore DHCP clients naming itself <i>wpad</i>") (Cert <a href=https://www.kb.cert.org/vuls/id/598349 target=_blank>VU#598349</a>).</label><br>
+<input id="wpad1" type="checkbox" name="wpadfix" value="yes"$wpadfix_chk><label for="wpad1"> $(lang de:"Ignoriere DHCP-Clients die sich als <i>wpad</i> ausgeben" en:"Ignore DHCP clients naming itself <i>wpad</i>") (Cert <a href=https://www.kb.cert.org/vuls/id/598349 target=_blank>VU#598349</a>).</label><br>
 </p>
 EOF
 sec_end

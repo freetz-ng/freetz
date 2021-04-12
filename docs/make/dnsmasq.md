@@ -347,6 +347,67 @@ Token-Ring-Hardware-Adresse, da die ARP-Adresse für Token Ring 6 ist.
 Diese wiederum wird aus `hosts` mit den MAC-Adressen etc. beim Start von
 dnsmasq generiert.
 
+### DHCP-Hosts Einträge --dhcp-host
+
+Wenn die Option "Lese DHCP host Informationen aus einer Datei."
+aktiviert ist, kann man zusätzlich dhcp-hosts über den dnsmasq parameter
+--dhcp-host anlegen. (Dnsmasq -> DHCP-hosts). Es handelt sich um eine 
+Liste von hosts:
+
+```
+[<hwaddr>][,id:<client_id>|*][,set:<tag>][tag:<tag>][,<ipaddr>][,<hostname>][,<lease_time>][,ignore]
+```
+
+Gegenüber der normalen Freetz hosts Liste, biete das den Vorteil, dass
+man auch IPv6 Adressen bzw. Suffix definieren kann. (Achtung Privacy)
+
+```
+11:22:33:AA:BB:CC,192.168.1.100,[::bad:a55:100] ## pc-01
+```
+
+Desweiteren kann man auch hosts durch deren HW Adresse oder Client ID
+nur einen Hostname zuweisen, die IP Adresse wiederum bleibt dynamisch 
+und wird durch dnsmasq aus dem pool vergeben. Der hostname wird dann 
+durch dnsmasq DNS Server aufgelöst.
+
+```
+11:22:33:AA:BB:CC,tv-wohnzimmer
+```
+
+Durch die Benutzung von Tags können DHCP optionen jedem Host seperat 
+zuweisen werden. In folgendem Beispiel wird zusätzlich zu dem /24 
+Pool ein kleinerer Pool definiert, ein anderer DNS Server und ein
+anderes default GW angelegt. Die DHCP Optionen sind durch die 
+IANA festgelegt: [DHCP Options](https://www.iana.org/assignments/bootp-dhcp-parameters/bootp-dhcp-parameters.txt)
+
+Zuerst muss man einen weiteren Pool hinzufügen und einem tag 
+zuweisen. Hinzufügen bei "DHCP Range (eine pro Zeile)"
+
+```
+tag:clients, 192.168.100.30, 192.168.100.40,24h
+```
+
+Zusätzliche DHCP Optionen kann man in der "extra" datei wie folgt 
+anlegen:
+
+```
+dhcp-option=tag:no_adaway,6,8.8.8.8,8.8.4.4   # 6 - DNS Server
+dhcp-option=tag:no_adaway,15,local            # 15 - domain name
+dhcp-option=tag:no_internet,3,192.168.100.253 # 3 - default GW
+```
+
+Wenn man jetzt 2 clients hat, der eine soll ohne ad-blocker direct
+den google DNS benutzen, der andere client wiederum soll nicht die 
+Fritzbox als Router sondern ein anderes GW benutzen:
+
+```
+11:22:33:AA:BB:CC,set:clients,set:no_internet,tv-wohnzimmer
+33:22:11:CC:BB:AA,set:clients,set:no_adaway,smartphone-01
+```
+
+Beide clients bekommen eine Adresse aus dem Pool "clients"
+(.30 - .40), aber entsprechend andere DHCP optionen.
+
 ### DHCP Boot
 
 Der DHCP-Boot-Eintrag wird für Optionen des

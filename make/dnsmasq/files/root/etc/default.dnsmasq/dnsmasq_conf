@@ -80,3 +80,6 @@ egrep -v '^(#|[[:space:]]*$)' /tmp/flash/mod/hosts 2>/dev/null | \
 	[ "${mac}" == "dhcp-host" ] && echo "dhcp-host=${host}"
 done
 
+if [ "$DNSMASQ_DHCPHOSTFILE" == "yes" ]; then
+	echo "dhcp-hostsfile=/var/tmp/flash/dnsmasq/dnsmasq.dhcphosts"
+fi

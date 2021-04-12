@@ -231,6 +231,7 @@ Index:
      - [DHCP Server](../docs/make/dnsmasq.md#dhcp-server)
      - [Beispiel](../docs/make/dnsmasq.md#beispiel)
      - [Einträge in der Hosts-Liste](../docs/make/dnsmasq.md#einträge-in-der-hosts-liste)
+     - [DHCP-Hosts Einträge --dhcp-host](../docs/make/dnsmasq.md#dhcp-hosts-einträge---dhcp-host)
      - [DHCP Boot](../docs/make/dnsmasq.md#dhcp-boot)
      - [TFTP Server](../docs/make/dnsmasq.md#tftp-server)
      - [Beispiel](../docs/make/dnsmasq.md#beispiel)
