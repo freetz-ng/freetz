@@ -1,5 +1,5 @@
-CAPTION="Dnsmasq: $(lang de:"DHCP Hosts Eintr&auml;ge (dhcp-hostsfile)" en:"DHCP Hosts entries dhcp-hostsfile")"
-DESCRIPTION="$(lang de:"[&lt;hwaddr&gt;][,id:&lt;client_id&gt;|*][,set:&lt;tag&gt;][,&lt;ipaddr&gt;][,&lt;hostname&gt;][,&lt;lease_time&gt;][,ignore]" en:"[&lt;hwaddr&gt;][,id:&lt;client_id&gt;|*][,set:&lt;tag&gt;][,&lt;ipaddr&gt;][,&lt;hostname&gt;][,&lt;lease_time&gt;][,ignore]")"
+CAPTION="Dnsmasq: $(lang de:"DHCP Hosts Eintr&auml;ge (dhcp-hostsfile)" en:"DHCP hosts entries dhcp-hostsfile")"
+DESCRIPTION="[&lt;hwaddr&gt;][,id:&lt;client_id&gt;|*][,set:&lt;tag&gt;][,&lt;ipaddr&gt;][,&lt;hostname&gt;][,&lt;lease_time&gt;][,ignore]"
 CONFIG_FILE='/tmp/flash/dnsmasq/dnsmasq.dhcphosts'
 CONFIG_SAVE='modsave flash; /mod/etc/init.d/rc.dnsmasq reload'
 CONFIG_TYPE='text'

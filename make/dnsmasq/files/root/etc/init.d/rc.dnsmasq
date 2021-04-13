@@ -62,6 +62,14 @@ stop_post() {
 	fi
 }
 
+cgireg() {
+	modunreg file $DAEMON dhcphosts
+
+	if [ "$DNSMASQ_DHCPHOSTFILE" == "yes" ]; then
+		modreg file $DAEMON dhcphosts 'DHCP-hosts' 0 dnsmasq_dhcphosts
+	fi
+}
+
 case $1 in
 	""|load|multid|rextd)
 		if [ "$1" == "multid" -o "$1" == "rextd" ]; then
@@ -75,9 +83,7 @@ case $1 in
 		modreg cgi $DAEMON "$DAEMON_LONG_NAME"
 		modreg daemon $DAEMON
 		modreg file $DAEMON extra 'extra' 0 dnsmasq_extra
-		if [ "$DNSMASQ_DHCPHOSTFILE" == "yes" ]; then
-			modreg file $DAEMON dhcphosts 'DHCP-hosts' 0 dnsmasq_dhcphosts
-		fi		
+		cgireg
 
 		modlib_add_user_and_group nobody
 		mkdir -p ${PID_FILE%/*}
@@ -109,6 +115,9 @@ case $1 in
 	status)
 		modlib_status
 		;;
+	cgireg)
+		cgireg
+		;;
 	*)
 		echo "Usage: $0 [load|unload|start|stop|restart|reload|status]" 1>&2
 		exit 1
@@ -116,3 +125,4 @@ case $1 in
 esac
 
 exit 0
+
