@@ -50,6 +50,7 @@ Latest changes
    * precompiled host-tools updated to x86_64 (only)
 
  - Updated packages and libs:
+   * ca-bundle 2021-04-13
    * curl 7.76.0
    * expat 2.3.0
    * haproxy 2.2.13
