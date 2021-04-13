@@ -293,6 +293,9 @@ Index:
   * **<u>FFmpeg 1.2.12</u><a id='ffmpeg'></a>**<br>
     FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video.
 
+  * **<u>fhem -r16562 (5.8)</u><a id='fhem'></a>**<br>
+    fhem is a perl server for house automation, see web page http://fhem.de
+
   * **[fortune 1.2](../docs/make/fortune.md)<a id='fortune'></a>**<br>
     Fortune is a small game that is meant to lighten up your life. It can be used to display a random entry from a cookie file. After having installed the package, just put some fortune- files into a directory and create a symbolic link to /var/media/fortunes like this: ln -s /var/media/ftp/ExternalDisk/fortunes/ /var/media/fortunes For your convenience I have packed some fortune-files up and uploaded them here: http://homepages.tu-darmstadt.de/~pkrueger/fortunes.7z If you'd rather get your own files, you could start looking here: http://www.freebsd.org/cgi/cvsweb.cg...tune/datfiles/
      - [Paket konfigurieren](../docs/make/fortune.md#paket-konfigurieren)
@@ -659,6 +662,8 @@ Index:
 
   * **<u>PCSC-lite (pcscd) 1.9.0 (binary only)</u><a id='pcsc-lite'></a>**<br>
     The purpose of PCSC Lite is to provide a Windows(R) SCard interface in a very small form factor for communicating to smart cards and readers.
+
+  * **<u>perl 5.27.5 (binary only)</u><a id='perl'></a>**<br>
 
   * **<u>phonebook-tools: Phone book tools 0.0</u><a id='phonebook-tools'></a>**<br>
     A set of tools for reading and converting Fritz!Box phone book to such (easy parseable) formats like: - .csv (comma-separated values), or - .tsv (tab-separated values).
