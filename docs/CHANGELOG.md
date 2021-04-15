@@ -51,7 +51,7 @@ Latest changes
 
  - Updated packages and libs:
    * ca-bundle 2021-04-13
-   * curl 7.76.0
+   * curl 7.76.1
    * dnsmasq 2.80/2.85
    * expat 2.3.0
    * haproxy 2.2.13

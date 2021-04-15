@@ -133,7 +133,7 @@ Index:
   * **[Ctorrent dnh3.3.2 (binary only)](ctorrent.md)<a id='ctorrent'></a>**<br>
     CTorrent is a BitTorrent client written in the C programming language, known to be a very robust and mature programming language, which produces fast and optimized application.
 
-  * **[Curl 7.76.0 (binary only)](curl.md)<a id='curl'></a>**<br>
+  * **[Curl 7.76.1 (binary only)](curl.md)<a id='curl'></a>**<br>
     Curl is a command line tool for transferring files with URL syntax, supporting FTP, FTPS, HTTP, HTTPS, GOPHER, TELNET, DICT, FILE and LDAP. Curl supports HTTPS certificates, HTTP POST, HTTP PUT, FTP uploading, kerberos, HTTP form based upload, proxies, cookies, user+password authentication, file transfer resume, http proxy tunneling and a busload of other useful tricks.
 
   * **<u>CurlFtpFS 0.9.2</u><a id='curlftpfs'></a>**<br>
@@ -489,9 +489,6 @@ Index:
 
   * **<u>PCSC-lite (pcscd) 1.9.0 (binary only)</u><a id='pcsc-lite'></a>**<br>
     The purpose of PCSC Lite is to provide a Windows(R) SCard interface in a very small form factor for communicating to smart cards and readers.
-
-  * **<u>Perl 5.32.1 (binary only)</u><a id='perl'></a>**<br>
-    Perl without operating-specific functions such as readdir.
 
   * **<u>phonebook-tools: Phone book tools 0.0</u><a id='phonebook-tools'></a>**<br>
     A set of tools for reading and converting Fritz!Box phone book to such (easy parseable) formats like: - .csv (comma-separated values), or - .tsv (tab-separated values).
@@ -864,6 +861,9 @@ Index:
 
   * **[MySQL 6.0.11-alpha](mysql.md)<a id='mysql'></a>**<br>
     MySQL is a very fast, multi-threaded, multi-user and robust SQL (Structured Query Language) database server. Unstable, as this version is quite old, but runs well on Fritzbox. Do not expose this daemon to the internet!
+
+  * **<u>Perl 5.32.1 (binary only)</u><a id='perl'></a>**<br>
+    Perl without operating-specific functions such as readdir.
 
   * **[sane-backends: SANE 1.0.27](sane-backends.md)<a id='sane-backends'></a>**<br>
     SANE - Scanner support (initial Freetz package by Michael Denk, tehron @ http://www.ip-phone-forum.de/)
