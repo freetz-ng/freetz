@@ -64,9 +64,19 @@ stop_post() {
 
 cgireg() {
 	modunreg file $DAEMON dhcphosts
+	modunreg file $DAEMON leases
 
 	if [ "$DNSMASQ_DHCPHOSTFILE" == "yes" ]; then
 		modreg file $DAEMON dhcphosts 'DHCP-hosts' 0 dnsmasq_dhcphosts
+	fi
+	if [ "$DNSMASQ_DHCP" == "yes" ]; then
+		modreg file $DAEMON leases 'DHCP-Leases' 0 dnsmasq_leases
+	fi
+}
+
+get_leases() {
+	if [ -s "/tmp/dnsmasq.leases" ]; then
+		cat /tmp/dnsmasq.leases | sort |  awk 'NF>1{ $1=strftime("%c", $1);}1'
 	fi
 }
 
@@ -117,6 +127,9 @@ case $1 in
 		;;
 	cgireg)
 		cgireg
+		;;
+	get_leases)
+		get_leases
 		;;
 	*)
 		echo "Usage: $0 [load|unload|start|stop|restart|reload|status]" 1>&2

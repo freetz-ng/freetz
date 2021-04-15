@@ -68,6 +68,8 @@ Latest changes
    * Settings backup:
       + Check for identic device, AVM passwords are device specific encoded
       + Support of encrypted setting backup files (openssl is required)
+   * Dnsmasq GUI:
+      + Add page to display DHCP leases
 
  - Firmware updates:
    * Please see [FIRMWARES](FIRMWARES.md) for the list of currently supported devices and firmwares.
