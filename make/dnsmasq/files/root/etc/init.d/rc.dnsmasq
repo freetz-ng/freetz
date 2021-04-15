@@ -66,7 +66,7 @@ cgireg() {
 	modunreg file $DAEMON dhcphosts
 	modunreg file $DAEMON leases
 
-	if [ "$DNSMASQ_DHCPHOSTFILE" == "yes" ]; then
+	if [ "$DNSMASQ_DHCP" == "yes" ] && [ "$DNSMASQ_DHCPHOSTFILE" == "yes" ]; then
 		modreg file $DAEMON dhcphosts 'DHCP-hosts' 0 dnsmasq_dhcphosts
 	fi
 	if [ "$DNSMASQ_DHCP" == "yes" ]; then

@@ -71,6 +71,7 @@ Latest changes
       + Support of encrypted setting backup files (openssl is required)
    * Dnsmasq GUI:
       + Add page to display DHCP leases
+      + Add page to configure DHCP-Hosts - works in addition to freetz hosts file
 
  - Firmware updates:
    * Please see [FIRMWARES](FIRMWARES.md) for the list of currently supported devices and firmwares.
