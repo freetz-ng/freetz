@@ -1,6 +1,6 @@
 --- configure
 +++ configure
-@@ -15007,7 +15007,7 @@
+@@ -15010,7 +15010,7 @@
  
  { $as_echo "$as_me:${as_lineno-$LINENO}: **************************************** PTY device files" >&5
  $as_echo "$as_me: **************************************** PTY device files" >&6;}
@@ -9,7 +9,7 @@
      as_ac_File=`$as_echo "ac_cv_file_"/dev/ptmx"" | $as_tr_sh`
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for \"/dev/ptmx\"" >&5
  $as_echo_n "checking for \"/dev/ptmx\"... " >&6; }
-@@ -15062,7 +15062,7 @@
+@@ -15065,7 +15065,7 @@
  { $as_echo "$as_me:${as_lineno-$LINENO}: **************************************** entropy sources" >&5
  $as_echo "$as_me: **************************************** entropy sources" >&6;}
  

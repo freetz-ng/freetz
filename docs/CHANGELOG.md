@@ -63,7 +63,7 @@ Latest changes
    * OpenSSL 0.9.8zh/1.0.2u/1.1.1k/3.0.0-alpha13
    * OpenVPN 2.4.11/2.5.2
    * Perl 5.32.1
-   * stunnel 5.58
+   * stunnel 5.59
    * Tor 0.4.5.7
 
  - Web interface:
