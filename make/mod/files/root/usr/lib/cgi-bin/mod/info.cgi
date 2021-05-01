@@ -40,8 +40,8 @@ print_entry() {
 			print_entry "$type" "${name}_$sub"
 		fi
 	else
-		ver="$(sed -n "s/^$entry //p" /etc/versions.pkg)"
-		echo "$name $ver<br>"
+		ver="$(sed -n "s/^${name//_/.} //p" /etc/versions.pkg)"
+		echo "$name $pkg ${ver:0:10}<br>"
 		open_entry=$name
 	fi
 }
