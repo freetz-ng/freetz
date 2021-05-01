@@ -35,12 +35,13 @@ print_entry() {
 	local type=$1 name=$2 sub=$3
 	if [ -n "$sub" ]; then
 		if [ "$name" = "$open_entry" ]; then
-			echo "<small>&gt; $sub</small><br>"
+			echo "<small>&nbsp;&nbsp;&nbsp;&gt; $sub</small><br>"
 		else
 			print_entry "$type" "${name}_$sub"
 		fi
 	else
-		echo "$name<br>"
+		ver="$(sed -n "s/^$entry //p" /etc/versions.pkg)"
+		echo "$name $ver<br>"
 		open_entry=$name
 	fi
 }
