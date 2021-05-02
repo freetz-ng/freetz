@@ -41,7 +41,7 @@ print_entry() {
 		fi
 	else
 		ver="$(sed -n "s/^${name//_/.} //p" /etc/versions.pkg)"
-		echo "$name $pkg ${ver:0:10}<br>"
+		echo "$name ${ver:0:10}<br>"
 		open_entry=$name
 	fi
 }
