@@ -14,6 +14,14 @@ folgende Features:
 -   IPv6
 -   SSL Verschlüsselung
 
+### Bekannte Probleme
+
+Mit 7520/7530 07.25 crasht die Box bei Verbindungsaufbau zum FTP-Server.
+Dies ist keine allgemeines ARM Problem da ARM-Repeater nicht crashen.
+Sondern vermutlich ein Bug oder Fehlkonfiguration im Kernel (AVM-PA etc).
+Als Workaround im Webif bei vsftpd unter `Zusätzliche Konfigurationsoptionen
+(für Experten)` dies eintragen: `isolate_network=NO`. Siehe [https://github.com/Freetz-NG/freetz-ng/issues/236](https://github.com/Freetz-NG/freetz-ng/issues/236)
+
 ### Package ins Image einbinden
 
 Im menuconfig unter `Package selection ---> Standard packages --->`

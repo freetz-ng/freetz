@@ -206,7 +206,7 @@ FAVICON_DIR="${GRAPHICS_DIR}/favicon"
 TAGGING_DIR="${GRAPHICS_DIR}/tagging"
 
 # Package files
-STATIC_PACKAGES_FILE="${BASE_DIR}/.static"
+PACKAGES_LIST_FILE="${BASE_DIR}/.packages"
 STATIC_ADDON_FILES="${ADDON_DIR}/*.pkg"
 
 # Alien variables
@@ -996,12 +996,6 @@ if [ "$DO_MOD" -gt 0 ]; then
 	echo "${FREETZ_VERSION}" > "${FILESYSTEM_MOD_DIR}/etc/.freetz-version"
 	ln -f "${FILESYSTEM_MOD_DIR}/etc/.freetz-version" "${FILESYSTEM_MOD_DIR}/etc/.freetz-ng-version"
 
-	PACKAGES_LIST_FILE="${BASE_DIR}/.packages"
-	rm -f "${PACKAGES_LIST_FILE}"
-	for pkg in $(static_packages) $(static_addons); do
-		echo "$pkg" >> "${PACKAGES_LIST_FILE}"
-	done
-
 	# Execute general patch scripts
 	for i in "${PATCHES_SCRIPTS_DIR}/"*.sh; do
 		[ -r "$i" ] || continue
@@ -1314,12 +1308,15 @@ if [ "$DO_MOD" -gt 0 ]; then
 
 		if ! grep -q "^$pkg_name$" "${VARTAR_MOD_DIR}/var/mod/etc/static.pkg" >/dev/null 2>&1; then
 			echo "$pkg_name" >> "${VARTAR_MOD_DIR}/var/mod/etc/static.pkg"
-			echo "$pkg_name ${pkg#$pkg_name-}" >> "${VARTAR_MOD_DIR}/var/mod/etc/versions.pkg"
 		fi
 
 		pkgfiles=$(collect_pkg_files "${pkg}" | sed -e "s,^,${PACKAGES_DIR}/${pkg}/root,")
 		sizeinfo pkg "${PACKAGES_DIR}/${pkg}" $pkgfiles
 	done
+	# order pkg-short package version symbol
+	sort "$PACKAGES_LIST_FILE" | while read sxx pkg ver xxx; do
+		echo "$sxx $(pkg_name $pkg-$ver) $pkg ${ver:0:12} $xxx"
+	done > "${VARTAR_MOD_DIR}/var/mod/etc/packages.lst"
 
 	[ -n "$(static_addons)" ] && echo0 "installing addons"
 	for pkg in $(static_addons); do
@@ -1348,8 +1345,10 @@ if [ "$DO_MOD" -gt 0 ]; then
 
 		if ! grep -q "^$pkg_name$" "${VARTAR_MOD_DIR}/var/mod/etc/static.pkg" >/dev/null 2>&1; then
 			echo "$pkg_name" >> "${VARTAR_MOD_DIR}/var/mod/etc/static.pkg"
-			echo "$pkg_name ${pkg#$pkg_name-}" >> "${VARTAR_MOD_DIR}/var/mod/etc/versions.pkg"
 		fi
+		rpn="$(real_pkg_name $pkg)"
+		cfs="FREETZ_ADDON_${rpn//-/_}"
+		echo "SXX $(pkg_name $pkg) $rpn ${pkg#$rpn-} ${cfs^^}" >> "${VARTAR_MOD_DIR}/var/mod/etc/packages.lst"
 		sizeinfo dir "${ADDON_DIR}/${pkg}"
 	done
 
@@ -2064,7 +2063,7 @@ if [ "$DO_PACK" -gt 0 ]; then
 		# Last, but not least, include .config and .packages into firmware
 		# image for further reference, e.g. user support
 		[ -r "$DOT_CONFIG" ] && { cat "$DOT_CONFIG" | grep -v "FREETZ_FWMOD_SIGN_PASSWORD" > "$FIRMWARE_MOD_DIR/var/.config"; }
-		[ -r "$PACKAGES_LIST_FILE" ] && cp "$PACKAGES_LIST_FILE" "$FIRMWARE_MOD_DIR/var"
+		[ -r "$PACKAGES_LIST_FILE" ] && cut "$PACKAGES_LIST_FILE" -d ' ' -f 2,3 > "$FIRMWARE_MOD_DIR/var/.packages"
 	fi
 
 	# Set img_name for pack, sign & link

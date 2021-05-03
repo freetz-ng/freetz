@@ -25,6 +25,10 @@ skin_body_begin() {
 	fi
 	local hname="$(hostname -s|html)"
 	[ "$hname" != "fritz" ] && hname="&#64;<a href="/cgi-bin/avm" target="_blank">${hname}</a>&nbsp;" || hname=""
+	local ver pkg="$(echo $id | sed -rn 's/^conf:(.*):_index$/\1/p')"
+	[              -n "$pkg" ] && ver="$(cut /etc/packages.lst -d ' ' -f 3,4 | sed -n "s/^${pkg//_/.} / /p")"
+	[ -z "$ver" -a -n "$pkg" ] && ver="$(cut /etc/packages.lst -d ' ' -f 2,4 | sed -n "s/^${pkg//_/.} / /p")"
+	[ -n "$ver" ] && title="$title $ver"
 	cat << EOF
 <table id="edge" border="0" cellspacing="0" cellpadding="0" width="$_cgi_total_width">
 <colgroup><col width="20"><col width="*"><col width="20"></colgroup>

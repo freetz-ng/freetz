@@ -470,9 +470,7 @@ modlang()
 # list of static packages, sorted by start level
 static_packages()
 {
-	sort $STATIC_PACKAGES_FILE 2>/dev/null \
-	  | sed -e 's/^[\ \t]*//' -e 's/[\ \t]*$//' -e 's/^S[0-9]*//' \
-	  | grep -v '^#' | grep -v '^$'
+	sort $PACKAGES_LIST_FILE | cut -d ' ' -f 2,3 | sed 's/ /-/'
 }
 
 static_addons()

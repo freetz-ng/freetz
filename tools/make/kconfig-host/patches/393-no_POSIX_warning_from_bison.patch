@@ -1,6 +1,6 @@
 --- scripts/kconfig/Makefile
 +++ scripts/kconfig/Makefile
-@@ -137,6 +137,8 @@
+@@ -130,6 +130,8 @@
  common-objs	:= confdata.o expr.o lexer.lex.o parser.tab.o preprocess.o \
  		   symbol.o util.o
  LEX = flex

@@ -884,7 +884,7 @@ Index:
     Streamripper records mp3 and ogg streams. For shoutcast style streams it finds the "meta data" or track separation data, and uses that as a marker for where the track should be separated.
      - [Verwendete Bibliotheken](../docs/make/streamripper.md#verwendete-bibliotheken)
 
-  * **[Stunnel 5.58](../docs/make/stunnel.md)<a id='stunnel'></a>**<br>
+  * **[Stunnel 5.59](../docs/make/stunnel.md)<a id='stunnel'></a>**<br>
     Stunnel universal SSL proxy
      - [Konfiguration](../docs/make/stunnel.md#konfiguration)
 
@@ -1009,6 +1009,7 @@ Index:
 
   * **[vsftpd 3.0.3](../docs/make/vsftpd.md)<a id='vsftpd'></a>**<br>
     A fast and secure FTP server
+     - [Bekannte Probleme](../docs/make/vsftpd.md#bekannte-probleme)
      - [Package ins Image einbinden](../docs/make/vsftpd.md#package-ins-image-einbinden)
      - [Verwandte Themen](../docs/make/vsftpd.md#verwandte-themen)
      - [Freigaben und Benutzer für vsFTP in Freetz einrichten](../docs/make/vsftpd.md#freigaben-und-benutzer-für-vsftp-in-freetz-einrichten)

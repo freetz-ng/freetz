@@ -1,13 +1,10 @@
 --- scripts/kconfig/Makefile
 +++ scripts/kconfig/Makefile
-@@ -26,10 +26,8 @@
- 	$(Q)$< $(silent) $(Kconfig)
+@@ -25,7 +25,6 @@
+ define config_rule
+ PHONY += $(1)
+ $(1): $(obj)/$($(1)-prog)
+-	$(Q)$$< $(silent) $(Kconfig)
  
- menuconfig: $(obj)/mconf
--	$(Q)$< $(silent) $(Kconfig)
- 
- config: $(obj)/conf
--	$(Q)$< $(silent) --oldaskconfig $(Kconfig)
- 
- nconfig: $(obj)/nconf
- 	$(Q)$< $(silent) $(Kconfig)
+ PHONY += build_$(1)
+ build_$(1): $(obj)/$($(1)-prog)

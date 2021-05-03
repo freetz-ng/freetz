@@ -9,12 +9,10 @@
 #
 
 /.config*
-/.dynamic
 /.fakeroot-cache
 /.fwmod_custom
 /.packages
 /.signature
-/.static
 /.tmpcache.*
 /*.log
 /build

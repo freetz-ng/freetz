@@ -9,7 +9,7 @@ it that way for Freetz.
 +++ Makefile
 @@ -0,0 +1,100 @@
 +VERSION = 5
-+PATCHLEVEL = 11
++PATCHLEVEL = 12
 +SUBLEVEL = 0
 +EXTRAVERSION =
 +NAME = "Linux for Workgroups"

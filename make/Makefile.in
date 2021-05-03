@@ -849,14 +849,11 @@ endef
 PKG_CONFIGURED_NOP=$(eval $(PKG_CONFIGURED_NOP__INT))
 
 
-## Add package to static or dynamic list
+## Add package to list files
 define PKG_LIST__INT
 $(pkg)-list:
-ifeq ($(strip $(FREETZ_PACKAGE_$(PKG))),y)
-	@echo "S$(strip $($(PKG)_STARTLEVEL))$(pkg)-$($(PKG)_VERSION)" >> .static
-else
-	@echo "S$(strip $($(PKG)_STARTLEVEL))$(pkg)-$($(PKG)_VERSION)" >> .dynamic
-endif
+	@echo "S$(strip $($(PKG)_STARTLEVEL)) $(pkg) $($(PKG)_VERSION) FREETZ_PACKAGE_$(PKG)" >> .packages
 .PHONY: $(pkg)-list
 endef
 PKG_LIST=$(eval $(PKG_LIST__INT))
+
