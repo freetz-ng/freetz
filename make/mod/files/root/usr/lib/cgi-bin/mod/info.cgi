@@ -40,8 +40,9 @@ print_entry() {
 			print_entry "$type" "${name}_$sub"
 		fi
 	else
-		ver="$(sed -n "s/^${name//_/.} //p" /etc/versions.pkg)"
-		echo "$name ${ver:0:10}<br>"
+		[ "$type" == "cgi" ] && name="$name-cgi"
+		[ "$type" == "cgi" -o "$type" == "pkg" ] && ver="$(cut /etc/packages.lst -d ' ' -f 3,4 | sed -n "s/^${name//_/.} / /p")" || ver=''
+		echo "$name${ver:0:13}<br>"
 		open_entry=$name
 	fi
 }
