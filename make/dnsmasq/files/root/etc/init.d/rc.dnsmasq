@@ -76,7 +76,11 @@ cgireg() {
 
 get_leases() {
 	if [ -s "/tmp/dnsmasq.leases" ]; then
-		cat /tmp/dnsmasq.leases | sort |  awk 'NF>1{ $1=strftime("%c", $1);}1'
+		echo "#### IPv4 Leases:"
+		grep -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' /tmp/dnsmasq.leases | sort -n -t . -k 2,2 -k 3,3 -k 4,4 | awk 'NF>1{ $1=strftime("%Y-%m-%d %H:%M:%S", $1);}1'
+		duid=$(grep duid /tmp/dnsmasq.leases | awk '{print $2}')
+		[ -n "$duid" ] && echo "#### IPv6 Leases: (duid: $duid)" || echo "#### IPv6 Leases:"
+		grep -Ev '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' /tmp/dnsmasq.leases | grep -v "duid" | sort -n -t : -k 5,5 -k 6,6 -k 7,7 -k 8,8 | awk 'NF>1{ $1=strftime("%Y-%m-%d %H:%M:%S", $1);}1'
 	fi
 }
 
