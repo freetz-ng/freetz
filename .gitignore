@@ -21,4 +21,5 @@
 /kernel
 /packages
 /source
-
+.dynamic
+.static
