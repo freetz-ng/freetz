@@ -604,7 +604,7 @@ menu "Download options"
 		default "FRITZ.Box_6490_Cable.de-en-es-it-fr-pl.141.07.02.image"                       if FREETZ_TYPE_6490 && FREETZ_TYPE_FIRMWARE_07_0X
 		default "FRITZ.Box_6490_Cable-07.12.image"                                             if FREETZ_TYPE_6490 && FREETZ_TYPE_FIRMWARE_07_1X
 		default "FRITZ.Box_6490_Cable-07.20.image"                                             if FREETZ_TYPE_6490 && FREETZ_TYPE_FIRMWARE_07_2X
-		default "FRITZ.Box_6490_Cable-07.25.image"                                             if FREETZ_TYPE_6490 && FREETZ_TYPE_FIRMWARE_07_25
+		default "FRITZ.Box_6490_Cable-07.27.image"                                             if FREETZ_TYPE_6490 && FREETZ_TYPE_FIRMWARE_07_25
 		#
 		default "FRITZ.Box_6590_Cable.de-en-es-it-fr-pl.148.06.87.image"                       if FREETZ_TYPE_6590 && FREETZ_TYPE_FIRMWARE_06_8X
 		default "FRITZ.Box_6590_Cable.de-en-es-it-fr-pl.148.07.02.image"                       if FREETZ_TYPE_6590 && FREETZ_TYPE_FIRMWARE_07_0X
