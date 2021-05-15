@@ -58,7 +58,7 @@ cat << EOF
 	<p>
 	<label for="password_backup">$(lang de:"Passwort f&uumlr Verschl&uumlsselung und Export" en:"Password for encryption and export"):</label>
 	<br>
-	<input type=text name="password_backup" id="password_backup" size="35" >
+	<input type="password" name="password_backup" id="password_backup" size="35" >
 	</p>
 EOF
 fi
@@ -119,7 +119,7 @@ cat << EOF
 	<p>
 	<label for="password_restore">$(lang de:"Passwort (falls verschl&uuml;sselt)" en:"Password (if encrypted)"):</label>
 	<br>
-	<input type=password name="password_restore" id="password_restore" size="35" >
+	<input type="password" name="password_restore" id="password_restore" size="35" >
 	</p>
 EOF
 fi
