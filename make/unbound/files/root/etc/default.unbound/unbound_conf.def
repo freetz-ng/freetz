@@ -1,0 +1,9 @@
+CAPTION='unbound: unbound.conf'
+DESCRIPTION='$(lang de:"Manpage auf" en:"Manpage at") www.unbound.net: <a target=blank href=http://www.unbound.net/documentation/unbound.conf.html>http://www.unbound.net/documentation/unbound.conf.html</a>'
+
+CONFIG_FILE='/tmp/flash/unbound/unbound.conf'
+CONFIG_SAVE='modsave flash; if pidof unbound > /dev/null; then echo ""; /mod/etc/init.d/rc.unbound restart; fi'
+CONFIG_TYPE='text'
+
+TEXT_ROWS=30
+

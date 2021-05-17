@@ -1,0 +1,51 @@
+#!/bin/sh
+
+DAEMON=unbound
+CONF_FILE=/tmp/flash/$DAEMON/$DAEMON.conf
+. /etc/init.d/modlibrc
+
+
+start() {
+	modlib_startdaemon unbound $UNBOUND_CMDLINE
+}
+
+case $1 in
+	""|load)
+		[ ! -d "/tmp/flash/$DAEMON" ] && mkdir -p /tmp/flash/$DAEMON
+
+		[ ! -e "$CONF_FILE" ] && /etc/default.$DAEMON/unbound_conf > $CONF_FILE
+		[ ! -e "/tmp/flash/$DAEMON/root.key" ] && cp /etc/default.$DAEMON/root.key /tmp/flash/$DAEMON/root.key
+		[ ! -e "/tmp/flash/$DAEMON/root.hints" ] && cp /etc/$DAEMON/root.hints /tmp/flash/$DAEMON/root.hints
+		chown -R nobody /tmp/flash/$DAEMON
+
+		modreg file $DAEMON conf 'unbound: unbound.conf' 1 "unbound_conf"
+		modreg cgi $DAEMON unbound
+                modreg daemon $DAEMON
+
+		modlib_start $UNBOUND_ENABLED
+		;;
+	unload)
+                modunreg daemon $DAEMON
+		modunreg cgi $DAEMON
+		modunreg file $DAEMON
+		modlib_stop
+		;;
+	start)
+		modlib_start
+		;;
+	stop)
+		modlib_stop
+		;;
+	restart)
+		modlib_restart
+		;;
+	status)
+		modlib_status
+		;;
+	*)
+		echo "Usage: $0 [load|unload|start|stop|restart|status]" 1>&2
+		exit 1
+		;;
+esac
+
+exit 0

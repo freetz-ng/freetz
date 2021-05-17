@@ -1,0 +1,3 @@
+ifeq ($(strip $(FREETZ_PACKAGE_UNBOUND)),y)
+PACKAGES+=unbound
+endif

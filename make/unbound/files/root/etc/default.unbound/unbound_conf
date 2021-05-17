@@ -1,0 +1,63 @@
+#!/bin/sh
+
+cat <<EOF
+server:
+
+	interface: ::0
+	interface: 0.0.0.0
+	access-control: ::1 allow
+	access-control: 192.168.0.0/16 allow
+
+	pidfile: "/var/run/unbound.pid"
+
+	do-ip4: yes
+	do-ip6: no
+	do-udp: yes
+	do-tcp: yes
+
+	port: 5353
+	username: "nobody"
+
+	hide-identity: yes
+	hide-version: yes
+	harden-glue: yes
+	harden-dnssec-stripped: yes
+	use-caps-for-id: yes
+
+	cache-min-ttl: 300
+	cache-max-ttl: 86400
+	prefetch: yes
+
+	# Faster UDP with multithreading
+	so-reuseport: yes
+
+	num-threads: 2
+	# power of 2 close to num-threads
+	msg-cache-slabs: 2
+	rrset-cache-slabs: 2
+	infra-cache-slabs: 2
+	key-cache-slabs: 2
+
+	# rrset=msg*2
+	rrset-cache-size: 2m
+	msg-cache-size: 1m
+
+	# outgoing connections: 1024/cores - 50
+	outgoing-range: 450
+	num-queries-per-thread: 256
+
+	# reduce edns packet size to help big udp packets over dumb firewalls
+	edns-buffer-size: 1232
+	max-udp-size: 1232
+
+	# logfile: "/var/log/unbound.log"
+	# log-time-ascii: no
+	verbosity: 1
+	use-syslog: yes
+
+	qname-minimisation: yes
+	root-hints: "/tmp/flash/unbound/root.hints"
+
+	auto-trust-anchor-file: "/tmp/flash/unbound/root.key"
+
+EOF

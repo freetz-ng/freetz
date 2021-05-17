@@ -1,0 +1,2 @@
+[ "$EXTERNAL_FREETZ_PACKAGE_UNBOUND" == "y" ] && EXTERNAL_FILES+=" /usr/bin/unbound /usr/bin/unbound-control /usr/bin/unbound-checkconf \
+/usr/bin/unbound-host /usr/lib/freetz/libunbound.so.8.1.12"

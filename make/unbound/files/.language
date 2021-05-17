@@ -1,0 +1,10 @@
+languages
+{ de en }
+default
+{ en }
+files
+{
+	usr/lib/cgi-bin/unbound.cgi
+	etc/default.unbound/unbound_conf.def
+}
+
