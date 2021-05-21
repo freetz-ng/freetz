@@ -64,7 +64,7 @@ Latest changes
    * curl 7.76.1
    * dnsmasq 2.80/2.85
    * expat 2.3.0
-   * haproxy 2.2.14
+   * haproxy 2.4.0
    * iperf 3.9
    * libgd 2.3.2
    * mbed TLS 2.7.19/2.26.0
