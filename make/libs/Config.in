@@ -129,6 +129,7 @@ menu "Networking"
 		source "make/libs/spandsp/Config.in"
 		source "make/libs/srtp/Config.in"
 		source "make/libs/libtirpc/Config.in"
+		source "make/unbound/Config.in.libs"
 endmenu ### "Networking"
 
 menu "PJ Project"

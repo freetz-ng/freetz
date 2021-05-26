@@ -1,0 +1,7 @@
+config EXTERNAL_FREETZ_LIB_libunbound
+	depends on EXTERNAL_ENABLED && FREETZ_LIB_libunbound
+	bool "unbound"
+	default n
+	help
+		externals these file(s):
+		 /usr/lib/freetz/libunbound.so.x.y.z

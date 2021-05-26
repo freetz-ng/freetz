@@ -38,6 +38,7 @@ server:
  # rrset=msg*2
  rrset-cache-size: 2m
  msg-cache-size: 1m
+ key-cache-size: 1m
 
  # outgoing connections: 1024/cores - 50
  outgoing-range: 450

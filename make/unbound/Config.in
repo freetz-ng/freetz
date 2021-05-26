@@ -3,32 +3,12 @@ menuconfig FREETZ_PACKAGE_UNBOUND
 	select FREETZ_LIB_libssl
 	select FREETZ_LIB_libcrypto
 	select FREETZ_LIB_libexpat
+	select FREETZ_LIB_libunbound
 	default n
 	help
 		 Unbound is designed as a set of modular components, so that also
 		 DNSSEC (secure DNS) validation and stub-resolvers (that do not run as
 		 a server, but are linked into an application) are easily possible.
-		  Goals:
-		    * A validating recursive DNS resolver.
-		    * Code diversity in the DNS resolver monoculture.
-		    * Drop-in replacement for BIND apart from config.
-		    * DNSSEC support.
-		    * Fully RFC compliant.
-		    * High performance
-		      o even with validation.
-		    * Used as
-		      o stub resolver.
-		      o full caching name server.
-		      o resolver library.
-		    * Elegant design of validator, resolver, cache modules.
-		      o provide the ability to pick and choose modules.
-		    * Robust.
-		    * In C, open source: The BSD license.
-		    * Smallest as possible component that does the job.
-		    * Stub-zones can be configured (local data or AS112 zones).
-		  Non-goals:
-		    * An authoritative name server.
-		    * Too many Features.
 
 if FREETZ_PACKAGE_UNBOUND
 
@@ -133,10 +113,4 @@ if FREETZ_PACKAGE_UNBOUND
 			
 			About 119 kB uncompressed.
 
-	config FREETZ_PACKAGE_UNBOUND_EC
-		bool "Force elliptic curve support"
-		select FREETZ_LIB_libcrypto_WITH_EC
-		default y
-
 endif # FREETZ_PACKAGE_UNBOUND
-

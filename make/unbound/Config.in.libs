@@ -1,0 +1,21 @@
+config FREETZ_LIB_libunbound
+	bool "libunbound 8.1.12"
+	select FREETZ_LIB_libssl
+	select FREETZ_LIB_libcrypto
+	select FREETZ_LIB_libexpat
+	default n
+	help
+	    This is the library API, for using the -lunbound  library. The library
+	    works independent from a running unbound server, and  can  be  used to
+            convert  hostnames to ip addresses, and back, and obtain other informa-
+            tion from the DNS. The library performs public-key  validation  of  re-
+            sults with DNSSEC.
+
+if FREETZ_LIB_libunbound
+
+	config FREETZ_PACKAGE_UNBOUND_EC
+		bool "Force elliptic curve support"
+		select FREETZ_LIB_libcrypto_WITH_EC
+		default y
+
+endif
