@@ -480,7 +480,7 @@ Currently supported devices and firmwares
   - 174.07.21 rev83015 {ALL} [PSQ19]
   - 174.07.24 rev85468 {ALL} [PSQ19 Phase 2] (Labor)
 * __Fritz!Repeater 6000 (UNTESTED)__
-  - 253.07.24 rev87819 {ALL} [PSQ19P2NL] (Inhaus)
+  - 253.07.27 rev88862 {ALL} [PSQ19P2NL2-aM7Poh3a]
 
 ### T-Com derivatives
 

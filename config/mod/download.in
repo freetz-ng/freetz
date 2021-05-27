@@ -324,6 +324,8 @@ menu "Download options"
 		#
 		default "@AVM/fritzbox-5530-fiber/{other,deutschland}/fritz.os"                                                    if FREETZ_TYPE_5530
 		#
+		default "@AVM/fritzwlan/fritzrepeater-6000/deutschland/fritz.os"                                                   if FREETZ_TYPE_6000 && FREETZ_TYPE_FIRMWARE_07_25
+		#
 		default "@AVM/firmware/6430/65797387"                                                                              if FREETZ_TYPE_6430 && FREETZ_TYPE_FIRMWARE_07_1X
 		#
 		default "@AVM/firmware/6490/78434061"                                                                              if FREETZ_TYPE_6490 && FREETZ_TYPE_FIRMWARE_06_8X
@@ -598,7 +600,7 @@ menu "Download options"
 		default "FRITZ.Box_5530-07.21.image"                                                   if FREETZ_TYPE_5530 && FREETZ_TYPE_FIRMWARE_07_2X
 		default "FRITZ.Box_5530-07.26.image"                                                   if FREETZ_TYPE_5530 && FREETZ_TYPE_FIRMWARE_07_25
 		#
-		default "FRITZ.Repeater_6000-07.24-87819-Inhaus.image"                                 if FREETZ_TYPE_6000 && FREETZ_TYPE_FIRMWARE_07_25_INHAUS
+		default "FRITZ.Repeater_6000-07.27.image"                                              if FREETZ_TYPE_6000 && FREETZ_TYPE_FIRMWARE_07_25
 		#
 		default "FRITZ.Box_6430_Cable-07.12.image"                                             if FREETZ_TYPE_6430 && FREETZ_TYPE_FIRMWARE_07_1X
 		#
