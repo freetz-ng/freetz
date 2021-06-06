@@ -1,6 +1,6 @@
 --- src/server.c
 +++ src/server.c
-@@ -293,12 +293,14 @@
+@@ -292,12 +292,14 @@
  			Log_fatal("bind %s %d: %s", addressString, Util_addressToPort(addresses[1]), strerror(errno));
  			free(addressString);
  		}

@@ -727,7 +727,7 @@ Index:
   * **<u>udpxy 1.0.23-9 (binary only)</u><a id='udpxy'></a>**<br>
     Small-footprint UNIX/Linux daemon to relay multicast UDP traffic to client's TCP (HTTP) connection.
 
-  * **<u>uMurmur 0.2.17</u><a id='umurmur'></a>**<br>
+  * **<u>uMurmur 0.2.20</u><a id='umurmur'></a>**<br>
     umurmur is a minimalistic Mumble server primarily targeted to run on routers using less resources. It targets to fill the needs of a pretty small group of users communicating, which in part originates from the other goal of working well on a small system with a limited CPU and limited amount of disk space. It also aims to minimize writing to the disk since these kinds of systems usually only has a flash memory for disk. umurmur supports a subset of the features of Murmur. https://github.com/umurmur/umurmur
 
   * **[Unbound 1.13.1](unbound.md)<a id='unbound'></a>**<br>
