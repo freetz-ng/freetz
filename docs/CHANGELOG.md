@@ -69,7 +69,7 @@ Latest changes
    * dnsmasq 2.80/2.85
    * expat 2.4.1
    * gnutls 3.6.16
-   * haproxy 2.4.0
+   * haproxy 2.4.1
    * iperf 3.9
    * libgcrypt 1.9.3
    * libgd 2.3.2
