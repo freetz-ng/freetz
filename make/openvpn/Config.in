@@ -77,14 +77,13 @@ choice
 		bool "OpenSSL"
 		select FREETZ_LIB_libcrypto if ! FREETZ_PACKAGE_OPENVPN_STATIC
 		select FREETZ_LIB_libssl    if ! FREETZ_PACKAGE_OPENVPN_STATIC
-
-#	config FREETZ_PACKAGE_OPENVPN_MBEDTLS
-#		bool "mbed TLS"
-#		select FREETZ_LIB_libmbedcrypto if ! FREETZ_PACKAGE_OPENVPN_STATIC
-#		select FREETZ_LIB_libmbedtls    if ! FREETZ_PACKAGE_OPENVPN_STATIC
-#		select FREETZ_LIB_libmbedx509   if ! FREETZ_PACKAGE_OPENVPN_STATIC
-#		help
-#			Leads to smaller binaries, but lacks support for some openssl features.
+	config FREETZ_PACKAGE_OPENVPN_MBEDTLS
+	bool "mbed TLS"
+		select FREETZ_LIB_libmbedcrypto if ! FREETZ_PACKAGE_OPENVPN_STATIC
+		select FREETZ_LIB_libmbedtls    if ! FREETZ_PACKAGE_OPENVPN_STATIC
+		select FREETZ_LIB_libmbedx509   if ! FREETZ_PACKAGE_OPENVPN_STATIC
+		help
+			Leads to smaller binaries, but lacks support for some openssl features.
 
 endchoice
 
