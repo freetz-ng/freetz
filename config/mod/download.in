@@ -438,8 +438,8 @@ menu "Download options"
 		default "@AVM/{fritzbox-7430/deutschland/fritz.os,fritzbox.7430/firmware/deutsch}"                                 if (FREETZ_TYPE_7430 || FREETZ_TYPE_7412_7430) && FREETZ_TYPE_LANG_DE
 		default "@AVM/{fritzbox-7430/other/fritz.os,fritzbox.7430/firmware/english}"                                       if FREETZ_TYPE_7430 && FREETZ_TYPE_LANG_EN
 		#
-		default "@AVM/{fritzbox-7490/deutschland/fritz.os,fritzbox.7490/firmware/deutsch},@1&1/7490"                       if FREETZ_TYPE_7490 && FREETZ_TYPE_LANG_DE
-		default "@AVM/{fritzbox-7490/{other,belgium}/fritz.os,fritzbox.7490/firmware/{english,belgium}}"                   if FREETZ_TYPE_7490 && FREETZ_TYPE_LANG_EN
+		default "@AVM/{fritzbox-7490/deutschland/fritz.os,fritzbox.7490/firmware/deutsch},@1&1/7490"                       if (FREETZ_TYPE_7490 || FREETZ_TYPE_5490_7490 || FREETZ_TYPE_5491_7490) && FREETZ_TYPE_LANG_DE
+		default "@AVM/{fritzbox-7490/{other,belgium}/fritz.os,fritzbox.7490/firmware/{english,belgium}}"                   if (FREETZ_TYPE_7490 || FREETZ_TYPE_5490_7490 || FREETZ_TYPE_5491_7490) && FREETZ_TYPE_LANG_EN
 		#
 		default "@AVM/fritzbox-7520/deutschland/fritz.os,@1&1/7520"                                                        if FREETZ_TYPE_7520
 		#
@@ -785,15 +785,15 @@ menu "Download options"
 		default "FRITZ.Box_7490.en-de-es-it-fr-pl.113.06.53.image"                             if FREETZ_TYPE_7490 && FREETZ_TYPE_LANG_EN && FREETZ_TYPE_FIRMWARE_06_5X
 		default "FRITZ.Box_7490.en-de-es-it-fr-pl.113.06.84.image"                             if FREETZ_TYPE_7490 && FREETZ_TYPE_LANG_EN && FREETZ_TYPE_FIRMWARE_06_8X
 		default "FRITZ.Box_7490.en-de-es-it-fr-pl.113.07.01.image"                             if FREETZ_TYPE_7490 && FREETZ_TYPE_LANG_EN && FREETZ_TYPE_FIRMWARE_07_0X
-		default "FRITZ.Box_7490.07.12.int.image/FRITZ.Box_7490-07.12.image"                    if FREETZ_TYPE_7490 && FREETZ_TYPE_LANG_EN && FREETZ_TYPE_FIRMWARE_07_1X
+		default "FRITZ.Box_7490.07.12.int.image/FRITZ.Box_7490-07.12.image"                    if (FREETZ_TYPE_7490 || FREETZ_TYPE_5490_7490 || FREETZ_TYPE_5491_7490) && FREETZ_TYPE_LANG_EN && FREETZ_TYPE_FIRMWARE_07_1X
 		default "FRITZ.Box_7490.113.06.30.image"                                               if FREETZ_TYPE_7490 && FREETZ_TYPE_LANG_DE && FREETZ_TYPE_FIRMWARE_06_2X
 		default "FRITZ.Box_7490.113.06.60.image"                                               if FREETZ_TYPE_7490 && FREETZ_TYPE_LANG_DE && FREETZ_TYPE_FIRMWARE_06_5X
 		default "FRITZ.Box_7490.113.06.83.image"                                               if FREETZ_TYPE_7490 && FREETZ_TYPE_LANG_DE && FREETZ_TYPE_FIRMWARE_06_8X
 		default "FRITZ.Box_7490.113.06.93.image"                                               if FREETZ_TYPE_7490 && FREETZ_TYPE_LANG_DE && FREETZ_TYPE_FIRMWARE_06_9X
 		default "FRITZ.Box_7490.113.07.01.image"                                               if FREETZ_TYPE_7490 && FREETZ_TYPE_LANG_DE && FREETZ_TYPE_FIRMWARE_07_0X
-		default "FRITZ.Box_7490-07.12.image"                                                   if FREETZ_TYPE_7490 && FREETZ_TYPE_LANG_DE && FREETZ_TYPE_FIRMWARE_07_1X
-		default "FRITZ.Box_7490-07.21.image"                                                   if FREETZ_TYPE_7490 &&                        FREETZ_TYPE_FIRMWARE_07_2X
-		default "FRITZ.Box_7490-07.27.image"                                                   if FREETZ_TYPE_7490 &&                        FREETZ_TYPE_FIRMWARE_07_25
+		default "FRITZ.Box_7490-07.12.image"                                                   if (FREETZ_TYPE_7490 || FREETZ_TYPE_5490_7490 || FREETZ_TYPE_5491_7490) && FREETZ_TYPE_LANG_DE && FREETZ_TYPE_FIRMWARE_07_1X
+		default "FRITZ.Box_7490-07.21.image"                                                   if (FREETZ_TYPE_7490 || FREETZ_TYPE_5490_7490 || FREETZ_TYPE_5491_7490) &&                        FREETZ_TYPE_FIRMWARE_07_2X
+		default "FRITZ.Box_7490-07.27.image"                                                   if (FREETZ_TYPE_7490 || FREETZ_TYPE_5490_7490 || FREETZ_TYPE_5491_7490) &&                        FREETZ_TYPE_FIRMWARE_07_25
 		#
 		default "FRITZ.Box_7520-07.14.image"                                                   if FREETZ_TYPE_7520 && FREETZ_TYPE_LANG_DE && FREETZ_TYPE_FIRMWARE_07_1X
 		default "FRITZ.Box_7520-07.21.image"                                                   if FREETZ_TYPE_7520                        && FREETZ_TYPE_FIRMWARE_07_2X
@@ -906,6 +906,8 @@ menu "Download options"
 		default y
 		depends on \
 			FREETZ_TYPE_3170_7170 || \
+			FREETZ_TYPE_5490_7490 || \
+			FREETZ_TYPE_5491_7490 || \
 			FREETZ_TYPE_7112_7170 || \
 			FREETZ_TYPE_7113_7170 || \
 			FREETZ_TYPE_7140_7170 || \
@@ -928,6 +930,8 @@ menu "Download options"
 		depends on FREETZ_DL_ALIEN
 		#
 		default "@AVM/fritzbox.wlan_3170/firmware/deutsch"                  if FREETZ_TYPE_3170_7170
+		default "@AVM/fritzbox/fritzbox-5490/other/fritz.os"                if FREETZ_TYPE_5490_7490
+		default "@AVM/fritzbox/fritzbox-5491/other/fritz.os"                if FREETZ_TYPE_5491_7490
 		default "@AVM/fritzbox.fon_wlan_7112/firmware/deutsch,@1&1/7112"    if FREETZ_TYPE_7112_7170
 		default "@AVM/fritzbox.fon_wlan_7113/firmware/deutsch,@1&1/7113"    if FREETZ_TYPE_7113_7170
 		default "@AVM/fritzbox.fon_wlan_7140/firmware/deutsch"              if FREETZ_TYPE_7140_7170
@@ -956,6 +960,8 @@ menu "Download options"
 		depends on FREETZ_DL_ALIEN
 		#
 		default "fritz.box_wlan_3170.49.04.58.image"                        if FREETZ_TYPE_3170_7170
+		default "FRITZ.Box_5490-07.12-V2.image/FRITZ.Box_5490-07.12.image"  if FREETZ_TYPE_5490_7490
+		default "FRITZ.Box_5491-07.12-V2.image/FRITZ.Box_5491-07.12.image"  if FREETZ_TYPE_5491_7490
 		default "FRITZ.Box_Fon_WLAN_7112.87.04.88.image"                    if FREETZ_TYPE_7112_7170
 		default "FRITZ.Box_Fon_WLAN_7113.60.04.68.image"                    if FREETZ_TYPE_7113_7170
 		default "fritz.box_fon_wlan_7140.annexb.30.04.33.image"             if FREETZ_TYPE_7140_7170
