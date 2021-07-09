@@ -77,7 +77,7 @@ Latest changes
    * libgd 2.3.2
    * libgpg-error 1.42
    * libtirpc 1.3.2
-   * mbed TLS 2.7.19/2.27.0
+   * mbed TLS 2.7.19/3.0.0
    * minidlna 1.3.0
    * OpenSSH 8.6p1
    * OpenSSL 0.9.8zh/1.0.2u/1.1.1k/3.0.0-beta1

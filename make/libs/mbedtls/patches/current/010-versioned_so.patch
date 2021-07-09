@@ -1,12 +1,12 @@
 --- library/Makefile
 +++ library/Makefile
-@@ -39,9 +39,17 @@
+@@ -41,9 +41,17 @@
  endif
  endif
  
--SOEXT_TLS=so.13
--SOEXT_X509=so.1
--SOEXT_CRYPTO=so.7
+-SOEXT_TLS=so.16
+-SOEXT_X509=so.4
+-SOEXT_CRYPTO=so.10
 +VERSION=0.0.0
 +VERSION_MAJOR=$(word 1,$(subst ., ,$(VERSION)))
 +VERSION_MINOR=$(word 2,$(subst ., ,$(VERSION)))
@@ -21,7 +21,7 @@
  
  # Set AR_DASH= (empty string) to use an ar implementation that does not accept
  # the - prefix for command line options (e.g. llvm-ar)
-@@ -202,9 +210,10 @@
+@@ -196,9 +204,10 @@
  
  libmbedtls.$(SOEXT_TLS): $(OBJS_TLS) libmbedx509.so
  	echo "  LD    $@"
@@ -34,7 +34,7 @@
  	echo "  LN    $@ -> $<"
  	ln -sf $< $@
  
-@@ -229,9 +238,10 @@
+@@ -223,9 +232,10 @@
  
  libmbedx509.$(SOEXT_X509): $(OBJS_X509) libmbedcrypto.so
  	echo "  LD    $@"
@@ -47,7 +47,7 @@
  	echo "  LN    $@ -> $<"
  	ln -sf $< $@
  
-@@ -256,9 +266,10 @@
+@@ -250,9 +260,10 @@
  
  libmbedcrypto.$(SOEXT_CRYPTO): $(OBJS_CRYPTO)
  	echo "  LD    $@"
